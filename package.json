@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "format": "prettier --write .",
-    "preinstall": "echo 'NPM IS BLOCKED' && exit 1",
+    "preinstall": "npx only-allow pnpm",
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",

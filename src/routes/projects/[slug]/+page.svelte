@@ -3,8 +3,8 @@
   import { marked } from 'marked'
 
   let { data } = $props()
-  let { project } = data
 
+  let project = $derived(data.project)
   let contentHtml = $derived(marked.parse(project.content))
 </script>
 
