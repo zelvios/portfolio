@@ -1,0 +1,18 @@
+# Ignore build outputs and dependencies
+node_modules
+.svelte-kit
+dist
+build
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Ignore static assets
+static/
+
+# Ignore auto-generated types
+**/*.d.ts
+
+# Ignore your env files
+.env
+.env.*

@@ -1,0 +1,13 @@
+export { default as GoToButtonShine } from './components/go-to-button-shine.svelte'
+export { default as WritingAnimation } from './components/writing-animation.svelte'
+export { default as DotPattern } from './components/dot-pattern.svelte'
+export { default as ScrollIndicator } from './components/scroll-indicator.svelte'
+export { default as ThemeSwap } from './components/theme-swap.svelte'
+export { default as HomeHero } from './components/home-hero.svelte'
+export { default as GlowCard } from './components/glow-card.svelte'
+export { default as DotMap } from './components/dot-map.svelte'
+export { default as Header } from './components/header.svelte'
+export { default as LightCard } from './components/light-card.svelte'
+
+export { default as GitHub } from './components/icons/Github.svelte'
+export { default as Mail } from './components/icons/Mail.svelte'

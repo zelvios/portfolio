@@ -1,0 +1,234 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn-svelte/tailwind.css';
+@import '@fontsource-variable/jetbrains-mono';
+
+@plugin '@tailwindcss/typography';
+
+@custom-variant dimmed (&:is(.dimmed, .dimmed *));
+
+@utility prose-terminal {
+  @apply prose prose-invert max-w-none;
+
+  --tw-prose-body: var(--foreground);
+  --tw-prose-headings: var(--highlight);
+  --tw-prose-links: var(--highlight);
+  --tw-prose-bold: var(--foreground);
+  --tw-prose-code: var(--highlight);
+  --tw-prose-pre-bg: var(--background);
+  --tw-prose-hr: var(--border);
+}
+
+/* ======================================================
+                      THEME VARIABLES
+   ====================================================== */
+:root {
+  --highlight: oklch(0.46 0.17 4);
+  --highlight-rgb: 139 52 50;
+
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(1 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+
+  /* Color for Highlight button */
+  --color-1: oklch(0.7 0.18 15);
+  --color-2: oklch(0.68 0.16 355);
+  --color-3: oklch(0.65 0.14 325);
+  --color-4: oklch(0.6 0.12 290);
+  --color-5: oklch(0.55 0.1 255);
+}
+.dimmed {
+  --highlight: oklch(0.79 0.12 305);
+  --background: oklch(0.18 0.02 284);
+  --foreground: oklch(0.87 0.03 260);
+
+  /* Color for Highlight button */
+  --color-1: oklch(0.82 0.1 305);
+  --color-2: oklch(0.78 0.12 295);
+  --color-3: oklch(0.72 0.1 280);
+  --color-4: oklch(0.65 0.08 260);
+  --color-5: oklch(0.58 0.06 240);
+}
+
+@theme inline {
+  --font-mono: 'JetBrains Mono Variable', monospace;
+
+  --color-highlight: var(--highlight);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* ScrollIndicator line shine */
+  --animate-scroll-down: scroll-down 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+
+  @keyframes scroll-down {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(250%);
+    }
+  }
+
+  /* WritingAnimation cursor blink */
+  --animate-blink-cursor: blink-cursor 1s step-end infinite;
+
+  @keyframes blink-cursor {
+    0%,
+    50% {
+      opacity: 1;
+    }
+    51%,
+    100% {
+      opacity: 0;
+    }
+  }
+
+  /* Home +page Animation */
+  --animate-home-reveal: home-reveal 2s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-line-reveal-top: line-reveal-top 3s cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+  --animate-line-reveal-bottom: line-reveal-bottom 3s
+    cubic-bezier(0.22, 1, 0.36, 1) forwards;
+
+  @keyframes line-reveal-top {
+    0% {
+      clip-path: inset(0 0 0 100%);
+    }
+    100% {
+      clip-path: inset(0 0 0 0%);
+    }
+  }
+
+  @keyframes line-reveal-bottom {
+    0% {
+      clip-path: inset(0 100% 0 0%);
+    }
+    100% {
+      clip-path: inset(0 0 0 0%);
+    }
+  }
+
+  @keyframes home-reveal {
+    0% {
+      opacity: 0;
+      letter-spacing: 0.35em;
+      filter: blur(8px);
+    }
+    40% {
+      opacity: 0.8;
+      filter: blur(2px);
+    }
+    100% {
+      opacity: 1;
+      letter-spacing: -0.025em;
+      filter: blur(0px);
+    }
+  }
+}
+
+/* ======================================================
+                        COMPONENTS
+   ====================================================== */
+.icon-shine {
+  color: var(--highlight);
+  position: relative;
+
+  mask-image: linear-gradient(
+    45deg,
+    black 30%,
+    rgba(0, 0, 0, 0.2) 50%,
+    black 70%
+  );
+  mask-size: 250% 100%;
+  animation: shine 4s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    mask-position: 100% 0;
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.5);
+  }
+  100% {
+    mask-position: -100% 0;
+    filter: brightness(1);
+  }
+}
+
+/* ======================================================
+                     VIEW TRANSITIONS
+   ====================================================== */
+/* Disable default cross-fade animations for the root View Transition
+   Allowing custom clip-path circular wipe in ThemeSwap.svelte. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.4s;
+  animation-timing-function: ease-in-out;
+}
+
+/* ======================================================
+                        BASE STYLES
+   ====================================================== */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-mono;
+  }
+}
