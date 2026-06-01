@@ -21,7 +21,7 @@
 </svelte:head>
 
 <div
-  class="w-full min-h-[100dvh] p-4 sm:p-8 pt-24 sm:pt-32 mt-8 sm:mt-32 max-w-5xl mx-auto"
+  class="w-full min-h-dvh p-4 sm:p-8 pt-24 sm:pt-32 mt-8 sm:mt-32 max-w-5xl mx-auto"
 >
   <MotionH1
     animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
@@ -40,7 +40,7 @@
   ></MotionDiv>
 
   <p
-    class="max-w-2xl mb-12 text-sm sm:text-base text-muted-foreground leading-normal min-h-[3rem]"
+    class="max-w-2xl mb-12 text-sm sm:text-base text-muted-foreground leading-normal min-h-12"
   >
     <WritingAnimation
       class="leading-normal inline"
@@ -104,7 +104,7 @@
             </h2>
 
             <p
-              class="text-muted-foreground text-sm leading-relaxed mb-6 flex-grow"
+              class="text-muted-foreground text-sm leading-relaxed mb-6 grow"
             >
               {project.description}
             </p>

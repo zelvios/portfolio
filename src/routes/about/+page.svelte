@@ -18,7 +18,7 @@
 
 <div
   data-route="/about"
-  class="snap-start min-h-[100dvh] w-full flex flex-col items-center justify-center p-4 sm:p-8 relative py-16"
+  class="snap-start min-h-dvh w-full flex flex-col items-center justify-center p-4 sm:p-8 relative py-16"
 >
   <div
     class="relative w-full max-w-3xl flex flex-col items-center justify-center"

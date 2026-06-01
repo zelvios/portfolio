@@ -14,9 +14,9 @@
 </svelte:head>
 
 <div
-  class="w-full min-h-[100dvh] p-4 sm:p-8 pt-24 sm:pt-32 max-w-5xl mx-auto space-y-6 sm:space-y-8"
+  class="w-full min-h-dvh p-4 sm:p-8 pt-24 sm:pt-32 max-w-5xl mx-auto space-y-6 sm:space-y-8"
 >
-  <div class=" text-[10px] sm:text-xs opacity-50 mb-4 break-words">
+  <div class=" text-[10px] sm:text-xs opacity-50 mb-4 wrap-break-word">
     <a href="/projects" class="hover:text-highlight">~/projects</a> / {project.slug}
   </div>
 

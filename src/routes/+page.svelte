@@ -20,7 +20,7 @@
 
     const timer = setTimeout(() => {
       gradientActive = true
-    }, 1900)
+    }, 900)
 
     return () => clearTimeout(timer)
   })

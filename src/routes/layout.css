@@ -133,11 +133,11 @@
     }
   }
 
-  /* Home +page Animation */
-  --animate-home-reveal: home-reveal 2s cubic-bezier(0.16, 1, 0.3, 1);
-  --animate-line-reveal-top: line-reveal-top 3s cubic-bezier(0.22, 1, 0.36, 1)
+  /* Home Animation */
+  --animate-home-reveal: home-reveal 1s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-line-reveal-top: line-reveal-top 1.2s cubic-bezier(0.22, 1, 0.36, 1)
     forwards;
-  --animate-line-reveal-bottom: line-reveal-bottom 3s
+  --animate-line-reveal-bottom: line-reveal-bottom 1.2s
     cubic-bezier(0.22, 1, 0.36, 1) forwards;
 
   @keyframes line-reveal-top {
