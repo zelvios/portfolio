@@ -73,10 +73,10 @@
 </script>
 
 <svelte:head>
-  <title>Software Developer | Jacob Jørgensen</title>
+  <title>Jacob Jørgensen | Jacob-J Programmer Portfolio</title>
   <meta
-    content="I'm Jacob Jørgensen, a developer based in Denmark. I enjoy creating dependable software and exploring full-stack development. Explore my portfolio!"
     name="description"
+    content="Explore the programmer portfolio of Jacob Jørgensen (Jacob-J). Discover full-stack projects built in Denmark."
   />
 </svelte:head>
 
@@ -87,7 +87,7 @@
 />
 
 <div
-  class="min-h-[100dvh] w-full bg-background relative overflow-hidden"
+  class="min-h-dvh w-full bg-background relative overflow-hidden"
   data-route="/"
 >
   <HomeHero {gradientActive} {isMounted} {isTransitioning} />

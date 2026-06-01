@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-  <title>About Me | Jacob Jørgensen</title>
+  <title>About | Jacob Jørgensen</title>
   <meta
     name="description"
     content="I'm Jacob Jørgensen, a software engineer specialized in cross-platform development, systems, and databases."

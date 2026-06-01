@@ -62,15 +62,13 @@
 
       if (!elementRef) return
 
-      const cleanup = inView(
+      return inView(
         elementRef,
         () => {
           isInView = true
         },
         { amount: 0.3 },
       )
-
-      return cleanup
     },
   )
 

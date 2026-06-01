@@ -53,6 +53,14 @@
   ]
 </script>
 
+<svelte:head>
+  <title>Contact | Jacob Jørgensen</title>
+  <meta
+    name="description"
+    content="Get in touch with Jacob Jørgensen. Reach out via email or connect on GitHub for software engineering inquiries and collaborations."
+  />
+</svelte:head>
+
 <div
   class="relative h-screen w-full flex flex-col items-center justify-center bg-background overflow-hidden"
 >
