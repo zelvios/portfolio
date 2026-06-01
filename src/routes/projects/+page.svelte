@@ -103,9 +103,7 @@
               {project.title}
             </h2>
 
-            <p
-              class="text-muted-foreground text-sm leading-relaxed mb-6 grow"
-            >
+            <p class="text-muted-foreground text-sm leading-relaxed mb-6 grow">
               {project.description}
             </p>
 

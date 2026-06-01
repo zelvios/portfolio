@@ -73,7 +73,7 @@
 </script>
 
 <svelte:head>
-  <title>Jacob Jørgensen | Jacob-J Programmer Portfolio</title>
+  <title>Home | Jacob Jørgensen Portfolio</title>
   <meta
     name="description"
     content="Explore the programmer portfolio of Jacob Jørgensen (Jacob-J). Discover full-stack projects built in Denmark."
