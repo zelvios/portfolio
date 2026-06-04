@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte'
   import { goto } from '$app/navigation'
-  import { DotPattern, ScrollIndicator, GoToButtonShine, HomeHero } from '$lib'
+  import { DotPattern, ScrollIndicator, HomeHero } from '$lib'
   import { cn } from '$lib/utils'
 
   let isTransitioning = $state(false)
@@ -87,21 +87,10 @@
 />
 
 <div
-  class="min-h-dvh w-full bg-background relative overflow-hidden"
+  class="min-h-dvh w-full bg-background relative flex flex-col items-center justify-center overflow-hidden px-4"
   data-route="/"
 >
   <HomeHero {gradientActive} {isMounted} {isTransitioning} />
-
-  <div
-    class="absolute top-[calc(50%+80px)] left-1/2 -translate-x-1/2 z-10 mt-8 transition-all duration-1000
-    {isTransitioning
-      ? 'opacity-0 translate-y-4 delay-0 pointer-events-none'
-      : gradientActive
-        ? 'opacity-100 translate-y-0 delay-500'
-        : 'opacity-0 translate-y-4 delay-500'}"
-  >
-    <GoToButtonShine href="/projects" text="Go To Projects" />
-  </div>
 
   <ScrollIndicator
     class="absolute bottom-8 left-1/2 -translate-x-1/2 transition-all duration-1000

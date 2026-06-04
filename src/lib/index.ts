@@ -8,6 +8,7 @@ export { default as GlowCard } from './components/glow-card.svelte'
 export { default as DotMap } from './components/dot-map.svelte'
 export { default as Header } from './components/header.svelte'
 export { default as LightCard } from './components/light-card.svelte'
+export { default as FileTreeContainer } from './components/file-tree-container.svelte'
 
 export { default as GitHub } from './components/icons/Github.svelte'
 export { default as Mail } from './components/icons/Mail.svelte'
