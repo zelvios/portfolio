@@ -8,6 +8,13 @@
   let isMounted = $state(false)
   let gradientActive = $state(false)
 
+  let windowWidth = $state(0)
+  let windowHeight = $state(0)
+
+  let hasEnoughHeight = $derived(
+    windowWidth >= 768 ? windowHeight > 650 : windowHeight > 860,
+  )
+
   let accumulatedScroll = $state(0)
   let scrollResetTimeout: ReturnType<typeof setTimeout>
 
@@ -76,18 +83,20 @@
   <title>Home | Jacob Jørgensen Portfolio</title>
   <meta
     name="description"
-    content="Explore the programmer portfolio of Jacob Jørgensen (Jacob-J). Discover full-stack projects built in Denmark."
+    content="Jacob J | Explore the programmer portfolio of Jacob Jørgensen. Discover full-stack projects built in Denmark."
   />
 </svelte:head>
 
 <svelte:window
+  bind:innerWidth={windowWidth}
+  bind:innerHeight={windowHeight}
   ontouchend={handleTouchEnd}
   ontouchstart={handleTouchStart}
   onwheel={handleWheel}
 />
 
 <div
-  class="min-h-dvh w-full bg-background relative flex flex-col items-center justify-center overflow-hidden px-4"
+  class="min-h-dvh relative flex w-full flex-col items-center justify-center overflow-hidden bg-background px-4"
   data-route="/"
 >
   <HomeHero {gradientActive} {isMounted} {isTransitioning} />
@@ -96,9 +105,9 @@
     class="absolute bottom-8 left-1/2 -translate-x-1/2 transition-all duration-1000
     {isTransitioning
       ? 'opacity-0 translate-y-8 delay-0 pointer-events-none'
-      : gradientActive
+      : gradientActive && hasEnoughHeight
         ? 'opacity-100 translate-y-0 delay-700'
-        : 'opacity-0 translate-y-6 delay-700'}"
+        : 'opacity-0 translate-y-6 delay-700 pointer-events-none'}"
     progress={scrollProgress}
   />
 
