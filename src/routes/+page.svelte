@@ -80,10 +80,10 @@
 </script>
 
 <svelte:head>
-  <title>Home | Jacob Jørgensen Portfolio</title>
+  <title>Jacob Jørgensen Portfolio</title>
   <meta
     name="description"
-    content="Jacob J | Explore the programmer portfolio of Jacob Jørgensen. Discover full-stack projects built in Denmark."
+    content="Jacob Jørgensen Portfolio: Discover full-stack projects by Jacob J. View my latest programming projects from Denmark."
   />
 </svelte:head>
 
