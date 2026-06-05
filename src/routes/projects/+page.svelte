@@ -25,7 +25,7 @@
 >
   <MotionH1
     animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
-    class="text-3xl font-bold bg-linear-to-r from-white to-highlight bg-clip-text text-transparent pb-1 tracking-tight text-left"
+    class="text-3xl font-bold text-white text-left"
     initial={{ opacity: 0, filter: 'blur(10px)', y: 15 }}
     transition={{ duration: 1.2, delay: 0.2 }}
   >

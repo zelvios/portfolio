@@ -4,8 +4,8 @@
   import ThemeSwap from './theme-swap.svelte'
 
   const links = [
-    { name: 'about', href: '/about' },
     { name: 'projects', href: '/projects' },
+    { name: 'about', href: '/about' },
     { name: 'contact', href: '/contact' },
   ]
 
