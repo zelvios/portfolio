@@ -22,10 +22,10 @@
     children,
     class: className,
     gradientSize = 200,
-    gradientColor = '#262626',
-    gradientOpacity = 0.8,
-    gradientFrom = '#9E7AFF',
-    gradientTo = '#FE8BBB',
+    gradientColor = 'var(--foreground)',
+    gradientOpacity = 0.15,
+    gradientFrom = 'var(--highlight)',
+    gradientTo = 'var(--highlight)',
   }: GlowCardProps = $props()
 
   const mouseX = useMotionValue(0)
@@ -51,7 +51,6 @@
     const rect = target.getBoundingClientRect()
     const x = e.clientX - rect.left
     const y = e.clientY - rect.top
-
     smoothMouseX.set(x)
     smoothMouseY.set(y)
     mouseX.set(x)
@@ -72,7 +71,7 @@
 
 <div
   class={cn(
-    'group relative rounded-[inherit] overflow-hidden border border-border',
+    'group relative rounded-[inherit] overflow-hidden border border-border bg-background',
     className,
   )}
   onpointerenter={handlePointerEnter}
@@ -97,7 +96,7 @@
     }}
   />
 
-  <div class="relative z-10">
+  <div class="relative z-10 text-foreground h-full">
     {#if children}
       {@render children()}
     {/if}

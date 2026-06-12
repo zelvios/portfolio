@@ -17,21 +17,17 @@
     children,
     class: className,
     gradientSize = 200,
-    gradientColor = '#262626',
-    gradientOpacity = 0.8,
-    gradientFrom = '#9E7AFF',
-    gradientTo = '#FE8BBB',
+    gradientColor = 'var(--foreground)',
+    gradientOpacity = 0.05,
+    gradientFrom = 'var(--highlight)',
+    gradientTo = 'var(--border)',
   }: LightCardProps = $props()
 
-  let mouseX = $derived(useMotionValue(-gradientSize))
-  let mouseY = $derived(useMotionValue(-gradientSize))
+  let mouseX = useMotionValue(-gradientSize)
+  let mouseY = useMotionValue(-gradientSize)
 
-  let borderGradient = $derived(
-    useMotionTemplate`radial-gradient(${gradientSize}px circle at ${mouseX}px ${mouseY}px, ${gradientFrom}, ${gradientTo}, var(--border) 100%)`,
-  )
-  let overlayGradient = $derived(
-    useMotionTemplate`radial-gradient(${gradientSize}px circle at ${mouseX}px ${mouseY}px, ${gradientColor}, transparent 100%)`,
-  )
+  let borderGradient = useMotionTemplate`radial-gradient(${gradientSize}px circle at ${mouseX}px ${mouseY}px, ${gradientFrom}, ${gradientTo}, var(--border) 100%)`
+  let overlayGradient = useMotionTemplate`radial-gradient(${gradientSize}px circle at ${mouseX}px ${mouseY}px, ${gradientColor}, transparent 100%)`
 
   const reset = () => {
     mouseX.set(-gradientSize)
@@ -44,10 +40,6 @@
     mouseX.set(e.clientX - rect.left)
     mouseY.set(e.clientY - rect.top)
   }
-
-  $effect(() => {
-    reset()
-  })
 
   $effect(() => {
     const handleGlobalPointerOut = (e: PointerEvent) => {

@@ -26,7 +26,7 @@
   <div class="w-full max-w-3xl mx-auto z-10">
     <MotionH1
       animate={{ opacity: 1, y: 0 }}
-      class="text-3xl font-bold text-white text-left"
+      class="text-3xl font-bold text-foreground text-left"
       initial={{ opacity: 0, y: 15 }}
       transition={{ duration: 1.2, delay: 0.2 }}
     >

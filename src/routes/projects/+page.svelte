@@ -25,7 +25,7 @@
 >
   <MotionH1
     animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
-    class="text-3xl font-bold text-white text-left"
+    class="text-3xl font-bold text-foreground text-left"
     initial={{ opacity: 0, filter: 'blur(10px)', y: 15 }}
     transition={{ duration: 1.2, delay: 0.2 }}
   >
@@ -85,20 +85,20 @@
       >
         <LightCard
           class="h-full rounded-[1.5rem] overflow-hidden transition-all duration-300 hover:scale-[1.01]"
-          gradientFrom="var(--color-highlight)"
+          gradientFrom="var(--highlight)"
           gradientTo="var(--border)"
           gradientSize={200}
           gradientOpacity={0.2}
         >
           <div class="p-5 sm:p-6 relative z-10 flex flex-col h-full">
             <div
-              class="mb-4 text-[10px] text-highlight uppercase tracking-wide"
+              class="mb-4 text-[10px] text-muted-foreground uppercase tracking-wide"
             >
               Posted: {project.createdAt}
             </div>
 
             <h2
-              class="text-lg sm:text-xl font-bold mb-2 bg-linear-to-r from-white to-[oklch(0.7_0.18_15)] bg-clip-text text-transparent transition-all duration-300"
+              class="text-lg sm:text-xl font-bold mb-2 text-foreground transition-all duration-300"
             >
               {project.title}
             </h2>
@@ -110,7 +110,7 @@
             <div class="flex flex-wrap gap-2 mb-6">
               {#each project.tags as tag}
                 <span
-                  class="px-1.5 py-0.5 bg-muted/50 rounded-md border border-border/50 text-[10px] uppercase tracking-wide text-muted-foreground"
+                  class="px-1.5 py-0.5 bg-secondary rounded-md border border-border text-[10px] uppercase tracking-wide text-secondary-foreground"
                 >
                   {tag}
                 </span>

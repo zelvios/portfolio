@@ -72,7 +72,7 @@
     >
       <div class="w-full max-w-7xl aspect-2/1">
         <DotMap
-          dotColor="#4a5568"
+          dotColor="var(--muted-foreground)"
           dotRadius={0.12}
           height={50}
           markerColor="var(--highlight)"
@@ -97,27 +97,25 @@
         >
           <a
             href={item.href}
-            class="flex w-full h-full flex-col items-center justify-center p-8 text-center text-white transition-colors duration-300 no-underline {item
+            class="flex w-full h-full flex-col items-center justify-center p-8 text-center text-foreground transition-colors duration-300 no-underline {item
               .hover.text}"
           >
             <div
-              class="mb-4 flex size-16 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/5 transition-colors {item
+              class="mb-4 flex size-16 shrink-0 items-center justify-center rounded-full border border-border bg-secondary transition-colors {item
                 .hover.border}"
             >
               <IconComponent size={28} />
             </div>
 
             <div
-              class="mb-4 h-8 w-px bg-white/10 transition-colors {item.hover
-                .bg}"
+              class="mb-4 h-8 w-px bg-border transition-colors {item.hover.bg}"
             ></div>
 
             <div class="flex flex-col items-center w-full">
               <span class="w-full px-2 text-center text-xl font-bold">
                 {item.name}
               </span>
-
-              <span class="mt-1 text-sm text-neutral-400 text-center">
+              <span class="mt-1 text-sm text-muted-foreground text-center">
                 {item.undername}
               </span>
             </div>

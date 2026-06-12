@@ -32,13 +32,12 @@
         class="relative z-10 inline-block px-2 font-serif text-6xl sm:text-8xl md:text-[9rem] leading-none font-extrabold tracking-tighter transition-all duration-1000 select-none md:-ml-32 text-wrap
         {isMounted ? 'animate-home-reveal' : 'opacity-0'}
         {gradientActive
-          ? 'bg-gradient-to-br from-white via-white to-neutral-500 bg-clip-text text-transparent drop-shadow-sm'
-          : 'text-white'}"
+          ? 'bg-gradient-to-br from-foreground via-foreground to-muted-foreground bg-clip-text text-transparent drop-shadow-sm'
+          : 'text-foreground'}"
       >
         Jacob
       </span>
 
-      <!-- Visually hidden space so screen readers/search engines read "Jacob Jørgensen" instead of "JacobJørgensen" -->
       <span class="sr-only"> </span>
 
       <span
@@ -79,7 +78,7 @@
           ? 'opacity-100 translate-y-0 delay-500'
           : 'opacity-0 translate-y-4 delay-500'}"
     >
-      <h2 class="mb-2 sm:mb-4 text-2xl font-bold text-white">
+      <h2 class="mb-2 sm:mb-4 text-2xl font-bold text-foreground">
         Fullstack Developer
       </h2>
 

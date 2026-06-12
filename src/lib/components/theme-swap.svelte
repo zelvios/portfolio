@@ -1,26 +1,31 @@
 <script lang="ts">
   import { onMount } from 'svelte'
-  import { Terminal, Coffee } from '@lucide/svelte'
+  import { Moon, Sun } from '@lucide/svelte'
   import { cn } from '$lib/utils'
 
-  interface ThemeSwapProps {
+  interface AnimatedThemeTogglerProps {
     class?: string
     duration?: number
   }
 
-  let { class: className, duration = 400, ...props }: ThemeSwapProps = $props()
+  let {
+    class: className,
+    duration = 400,
+    ...props
+  }: AnimatedThemeTogglerProps = $props()
 
-  let isDimmed = $state(false)
+  // We track 'isLight' instead of 'isDark' to match your CSS structure
+  let isLight = $state(false)
   let buttonRef: HTMLButtonElement | null = $state(null)
 
   onMount(() => {
-    const updateTheme = () => {
-      isDimmed = document.documentElement.classList.contains('dimmed')
-    }
+    // Check if the document has the 'light' class
+    isLight = document.documentElement.classList.contains('light')
 
-    updateTheme()
+    const observer = new MutationObserver(() => {
+      isLight = document.documentElement.classList.contains('light')
+    })
 
-    const observer = new MutationObserver(updateTheme)
     observer.observe(document.documentElement, {
       attributes: true,
       attributeFilter: ['class'],
@@ -32,20 +37,18 @@
   const toggleTheme = async () => {
     if (!buttonRef) return
 
+    const performToggle = () => {
+      isLight = !isLight
+      document.documentElement.classList.toggle('light', isLight)
+      localStorage.setItem('theme', isLight ? 'light' : 'dark')
+    }
+
     if (!document.startViewTransition) {
-      const newTheme = !isDimmed
-      isDimmed = newTheme
-      document.documentElement.classList.toggle('dimmed')
-      localStorage.setItem('theme', newTheme ? 'dimmed' : 'default')
+      performToggle()
       return
     }
 
-    await document.startViewTransition(() => {
-      const newTheme = !isDimmed
-      isDimmed = newTheme
-      document.documentElement.classList.toggle('dimmed')
-      localStorage.setItem('theme', newTheme ? 'dimmed' : 'default')
-    }).ready
+    await document.startViewTransition(performToggle).ready
 
     const { top, left, width, height } = buttonRef.getBoundingClientRect()
     const x = left + width / 2
@@ -66,7 +69,6 @@
         duration,
         easing: 'ease-in-out',
         pseudoElement: '::view-transition-new(root)',
-        fill: 'forwards',
       },
     )
   }
@@ -75,20 +77,13 @@
 <button
   bind:this={buttonRef}
   onclick={toggleTheme}
-  class={cn(
-    className,
-    'cursor-pointer rounded-full p-1 transition-all duration-300',
-    'hover:scale-115 hover:rotate-6 active:scale-95',
-    'focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-highlight/50',
-  )}
+  class={cn(className)}
   {...props}
 >
-  <span class="icon-shine block">
-    {#if isDimmed}
-      <Terminal class="size-5" />
-    {:else}
-      <Coffee class="size-5" />
-    {/if}
-  </span>
+  {#if isLight}
+    <Moon />
+  {:else}
+    <Sun />
+  {/if}
   <span class="sr-only">Toggle theme</span>
 </button>
