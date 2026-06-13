@@ -1,82 +1,6 @@
 <script lang="ts">
-  import { onMount } from 'svelte'
-  import { goto } from '$app/navigation'
-  import { DotPattern, ScrollIndicator, HomeHero } from '$lib'
+  import { DotPattern, HeroTextHover, CrossLines, HeroTerminal } from '$lib'
   import { cn } from '$lib/utils'
-
-  let isTransitioning = $state(false)
-  let isMounted = $state(false)
-  let gradientActive = $state(false)
-
-  let windowWidth = $state(0)
-  let windowHeight = $state(0)
-
-  let hasEnoughHeight = $derived(
-    windowWidth >= 768 ? windowHeight > 650 : windowHeight > 860,
-  )
-
-  let accumulatedScroll = $state(0)
-  let scrollResetTimeout: ReturnType<typeof setTimeout>
-
-  const scrollProgress = $derived(
-    Math.min((accumulatedScroll / 300) * 100, 100),
-  )
-
-  onMount(() => {
-    isMounted = true
-
-    const timer = setTimeout(() => {
-      gradientActive = true
-    }, 900)
-
-    return () => clearTimeout(timer)
-  })
-
-  function triggerNavigation() {
-    isTransitioning = true
-    accumulatedScroll = 300
-
-    setTimeout(() => {
-      goto('/projects')
-    }, 500)
-  }
-
-  function handleWheel(e: WheelEvent) {
-    if (isTransitioning || !gradientActive) return
-
-    clearTimeout(scrollResetTimeout)
-
-    if (e.deltaY > 0) {
-      accumulatedScroll += e.deltaY
-
-      if (accumulatedScroll >= 300) {
-        triggerNavigation()
-      }
-    } else {
-      accumulatedScroll = 0
-    }
-
-    scrollResetTimeout = setTimeout(() => {
-      if (!isTransitioning) {
-        accumulatedScroll = 0
-      }
-    }, 150)
-  }
-
-  let touchStartY = 0
-
-  function handleTouchStart(e: TouchEvent) {
-    touchStartY = e.touches[0].clientY
-  }
-
-  function handleTouchEnd(e: TouchEvent) {
-    if (isTransitioning || !gradientActive) return
-    const touchEndY = e.changedTouches[0].clientY
-
-    if (touchStartY - touchEndY > 150) {
-      triggerNavigation()
-    }
-  }
 </script>
 
 <svelte:head>
@@ -87,46 +11,78 @@
   />
 </svelte:head>
 
-<svelte:window
-  bind:innerWidth={windowWidth}
-  bind:innerHeight={windowHeight}
-  ontouchend={handleTouchEnd}
-  ontouchstart={handleTouchStart}
-  onwheel={handleWheel}
-/>
-
 <div
-  class="min-h-dvh relative flex w-full flex-col items-center justify-center overflow-hidden bg-background px-4"
-  data-route="/"
+  class="relative flex min-h-[100dvh] w-full flex-col items-center justify-center overflow-visible text-foreground font-mono"
 >
-  <HomeHero {gradientActive} {isMounted} {isTransitioning} />
-
-  <ScrollIndicator
-    class="absolute bottom-8 left-1/2 -translate-x-1/2 transition-all duration-1000
-    {isTransitioning
-      ? 'opacity-0 translate-y-8 delay-0 pointer-events-none'
-      : gradientActive && hasEnoughHeight
-        ? 'opacity-100 translate-y-0 delay-700'
-        : 'opacity-0 translate-y-6 delay-700 pointer-events-none'}"
-    progress={scrollProgress}
+  <DotPattern
+    class={cn(
+      'absolute inset-0 opacity-30',
+      'mask-[radial-gradient(350px_circle_at_center,white,transparent)] md:mask-[radial-gradient(500px_circle_at_center,white,transparent)]',
+    )}
+    cr={2}
+    height={20}
+    width={20}
   />
 
   <div
-    class="transition-opacity duration-1000
-    {isTransitioning
-      ? 'opacity-0 delay-0 pointer-events-none'
-      : gradientActive
-        ? 'opacity-100 delay-300'
-        : 'opacity-0 delay-300'}"
+    class="pointer-events-auto absolute inset-0 z-0 flex items-center justify-center"
   >
-    <DotPattern
-      class={cn(
-        'absolute inset-0 opacity-30',
-        'mask-[radial-gradient(350px_circle_at_center,white,transparent)] md:mask-[radial-gradient(500px_circle_at_center,white,transparent)]',
-      )}
-      cr={2}
-      height={20}
-      width={20}
-    />
+    <div class="w-[95vw] opacity-40">
+      <HeroTextHover text="Jacob" />
+    </div>
   </div>
+
+  <div
+    class="absolute inset-x-0 bottom-0 h-[450px] w-full max-w-5xl px-6 mx-auto z-0 pointer-events-none translate-y-40 -scale-y-100"
+  >
+    <div class="relative w-full h-full">
+      <CrossLines />
+    </div>
+  </div>
+
+  <main
+    class="relative z-10 w-full max-w-5xl px-6 flex flex-col items-center gap-0 text-center pointer-events-none"
+  >
+    <div class="relative mb-8">
+      <h2
+        class="text-[clamp(2.5rem,6vw,5rem)] font-extrabold tracking-[-0.03em] leading-[0.9] text-transparent bg-clip-text bg-gradient-to-br from-white to-highlight/40"
+      >
+        Full-Stack Developer
+      </h2>
+    </div>
+
+    <h1
+      class="mt-24 mb-4 text-[clamp(0.8125rem,2vw,1rem)] font-normal tracking-[0.12em] uppercase text-muted-foreground"
+    >
+      Jacob Jørgensen
+    </h1>
+
+    <h3
+      class="text-[clamp(0.6875rem,1.5vw,0.8125rem)] tracking-[0.08em] text-muted-foreground/50"
+    >
+      Based in Denmark
+    </h3>
+  </main>
 </div>
+
+<section
+  class="min-h-[100dvh] flex flex-col items-center p-6 sm:p-10 relative z-10"
+>
+  <div class="w-full max-w-5xl relative min-h-[400px]">
+    <div
+      class="absolute -top-24 left-0 right-0 z-10 text-left pl-6 sm:pl-10 grid grid-cols-1 md:grid-cols-3 gap-12 font-mono"
+    >
+      <div class="md:col-span-3 flex flex-col gap-3">
+        <span class="text-sm text-highlight/70 tracking-widest uppercase"
+          >// 01
+        </span>
+        <h2
+          class="text-3xl mb-8 font-extrabold tracking-tight text-white uppercase"
+        >
+          Core Architecture
+        </h2>
+        <HeroTerminal />
+      </div>
+    </div>
+  </div>
+</section>

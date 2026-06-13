@@ -7,23 +7,11 @@
 
 @custom-variant dimmed (&:is(.dimmed, .dimmed *));
 
-@utility prose-terminal {
-  @apply prose prose-invert max-w-none;
-
-  --tw-prose-body: var(--foreground);
-  --tw-prose-headings: var(--highlight);
-  --tw-prose-links: var(--highlight);
-  --tw-prose-bold: var(--foreground);
-  --tw-prose-code: var(--highlight);
-  --tw-prose-pre-bg: var(--background);
-  --tw-prose-hr: var(--border);
-}
-
 /* ======================================================
-                      THEME VARIABLES
+                      GLOBAL THEME
    ====================================================== */
 :root {
-  --highlight: oklch(0.46 0.17 4);
+  --highlight: oklch(0.5 0.2 265);
   --highlight-rgb: 139 52 50;
 
   --background: oklch(0.145 0 0);
@@ -51,13 +39,19 @@
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
 
-  /* Color for Highlight button */
   --color-1: oklch(0.7 0.18 15);
   --color-2: oklch(0.68 0.16 355);
   --color-3: oklch(0.65 0.14 325);
   --color-4: oklch(0.6 0.12 290);
   --color-5: oklch(0.55 0.1 255);
+
+  --yellow-500: oklch(0.85 0.18 90);
+  --red-500: oklch(0.65 0.25 25);
+  --blue-500: oklch(0.65 0.2 250);
+  --cyan-500: oklch(0.75 0.15 200);
+  --violet-500: oklch(0.7 0.2 300);
 }
+
 .light {
   --background: oklch(0.98 0 0);
   --foreground: oklch(0.15 0 0);
@@ -84,7 +78,6 @@
   --chart-4: oklch(0.6 0 0);
   --chart-5: oklch(0.7 0 0);
 
-  /* Color for Highlight button */
   --color-1: oklch(0.82 0.1 305);
   --color-2: oklch(0.78 0.12 295);
   --color-3: oklch(0.72 0.1 280);
@@ -94,7 +87,6 @@
 
 @theme inline {
   --font-mono: 'JetBrains Mono Variable', monospace;
-
   --color-highlight: var(--highlight);
   --color-chart-5: var(--chart-5);
   --color-chart-4: var(--chart-4);
@@ -127,83 +119,67 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+}
 
-  /* ScrollIndicator line shine */
+/* ======================================================
+                      GLOBAL COMPONENTS
+   ====================================================== */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-mono;
+  }
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* ======================================================
+                        HOME PAGE
+   ====================================================== */
+/* ScrollIndicator animation */
+@theme inline {
   --animate-scroll-down: scroll-down 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
 
-  @keyframes scroll-down {
-    0% {
-      transform: translateY(-100%);
-    }
-    100% {
-      transform: translateY(250%);
-    }
+@keyframes scroll-down {
+  0% {
+    transform: translateY(-100%);
   }
-
-  /* WritingAnimation cursor blink */
-  --animate-blink-cursor: blink-cursor 1s step-end infinite;
-
-  @keyframes blink-cursor {
-    0%,
-    50% {
-      opacity: 1;
-    }
-    51%,
-    100% {
-      opacity: 0;
-    }
+  100% {
+    transform: translateY(250%);
   }
+}
 
-  /* Home Animation */
-  --animate-home-reveal: home-reveal 1s cubic-bezier(0.16, 1, 0.3, 1);
-  --animate-line-reveal-top: line-reveal-top 1.2s cubic-bezier(0.22, 1, 0.36, 1)
-    forwards;
-  --animate-line-reveal-bottom: line-reveal-bottom 1.2s
-    cubic-bezier(0.22, 1, 0.36, 1) forwards;
+/* Text stroke utility */
+@utility text-stroke-current {
+  -webkit-text-stroke: 1px currentColor;
+}
 
-  @keyframes line-reveal-top {
-    0% {
-      clip-path: inset(0 0 0 100%);
-    }
-    100% {
-      clip-path: inset(0 0 0 0%);
-    }
-  }
-
-  @keyframes line-reveal-bottom {
-    0% {
-      clip-path: inset(0 100% 0 0%);
-    }
-    100% {
-      clip-path: inset(0 0 0 0%);
-    }
-  }
-
-  @keyframes home-reveal {
-    0% {
-      opacity: 0;
-      letter-spacing: 0.35em;
-      filter: blur(8px);
-    }
-    40% {
-      opacity: 0.8;
-      filter: blur(2px);
-    }
-    100% {
-      opacity: 1;
-      letter-spacing: -0.025em;
-      filter: blur(0px);
-    }
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .animate-scroll-fall {
+    animation: none;
+    top: 50%;
+    opacity: 0.5;
   }
 }
 
 /* ======================================================
-                        COMPONENTS
+                       UI ELEMENTS
    ====================================================== */
+/* Shine animation for icons/buttons */
 .icon-shine {
   color: var(--highlight);
   position: relative;
-
   mask-image: linear-gradient(
     45deg,
     black 30%,
@@ -225,31 +201,5 @@
   100% {
     mask-position: -100% 0;
     filter: brightness(1);
-  }
-}
-
-/* ======================================================
-                     VIEW TRANSITIONS
-   ====================================================== */
-/* Disable default cross-fade animations for the root View Transition
-   Allowing custom clip-path circular wipe in ThemeSwap.svelte. */
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation: none;
-  mix-blend-mode: normal;
-}
-
-/* ======================================================
-                        BASE STYLES
-   ====================================================== */
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-  html {
-    @apply font-mono;
   }
 }
