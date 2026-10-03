@@ -1,4 +1,5 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"hello_world": "Hello, {name} from en!"
+	"meta_title": "Jacob Jørgensen - Software Developer",
+	"meta_description": "Portfolio of Jacob Jørgensen, software developer in Denmark working mainly with Rust and C#."
 }
