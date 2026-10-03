@@ -1,0 +1,24 @@
+name: conventions
+
+on:
+  pull_request:
+
+jobs:
+  commits:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: wagoid/commitlint-github-action@v6
+
+  branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check branch name
+        run: |
+          branch="${{ github.head_ref }}"
+          if [[ ! "$branch" =~ ^(feat|fix|chore|docs|refactor|style|ci|build|perf|test)/[a-z0-9._-]+$ ]]; then
+            echo "Branch '$branch' must look like type/short-description"
+            exit 1
+          fi
