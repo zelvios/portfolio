@@ -3,10 +3,10 @@
 
 <p align="center">
     <a href="https://github.com/zelvios/portfolio/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/zelvios/portfolio/ci.yml?branch=main&label=ci&labelColor=1e1e2e&color=a6e3a1&style=for-the-badge" alt="ci"></a>
-    <a href="https://github.com/zelvios/portfolio/blob/main/LICENSE"><img src="https://img.shields.io/github/license/zelvios/portfolio?color=f5c2e7&labelColor=1e1e2e&style=for-the-badge" alt="license"></a>
+    <a href="https://github.com/zelvios/portfolio/blob/main/LICENSE"><img src="https://img.shields.io/github/license/zelvios/portfolio?color=fab387&labelColor=1e1e2e&style=for-the-badge" alt="license"></a>
     <br>
-    <a href="https://github.com/zelvios/portfolio/commits/main"><img src="https://img.shields.io/github/last-commit/zelvios/portfolio?labelColor=1e1e2e&color=89b4fa&style=for-the-badge" alt="last commit"></a>
-    <a href="https://github.com/zelvios/portfolio"><img src="https://img.shields.io/github/repo-size/zelvios/portfolio?color=94e2d5&labelColor=1e1e2e&style=for-the-badge" alt="size"></a>
+    <a href="https://github.com/zelvios/portfolio/commits/main"><img src="https://img.shields.io/github/last-commit/zelvios/portfolio?labelColor=1e1e2e&color=b4befe&style=for-the-badge" alt="last commit"></a>
+    <a href="https://github.com/zelvios/portfolio"><img src="https://img.shields.io/github/repo-size/zelvios/portfolio?color=f9e2af&labelColor=1e1e2e&style=for-the-badge" alt="size"></a>
 </p>
 Personal portfolio website, designed to highlight my work and skills.<br>
 
@@ -22,12 +22,12 @@ You can visit the live version of the site below.
 
 ## :hammer_and_wrench: Built with
 
-[![SvelteKit](https://img.shields.io/badge/-SvelteKit-f38ba8?style=for-the-badge&logo=svelte&logoColor=cdd6f4&labelColor=1e1e2e)](https://svelte.dev/docs/kit)
-[![Svelte 5](https://img.shields.io/badge/-Svelte_5-fab387?style=for-the-badge&logo=svelte&logoColor=cdd6f4&labelColor=1e1e2e)](https://svelte.dev)
-[![TypeScript](https://img.shields.io/badge/-TypeScript-89b4fa?style=for-the-badge&logo=typescript&logoColor=cdd6f4&labelColor=1e1e2e)](https://www.typescriptlang.org)
-[![Tailwind CSS](https://img.shields.io/badge/-Tailwind_CSS-89dceb?style=for-the-badge&logo=tailwindcss&logoColor=cdd6f4&labelColor=1e1e2e)](https://tailwindcss.com)
-[![Vite](https://img.shields.io/badge/-Vite-cba6f7?style=for-the-badge&logo=vite&logoColor=cdd6f4&labelColor=1e1e2e)](https://vite.dev)
-[![pnpm](https://img.shields.io/badge/-pnpm-f9e2af?style=for-the-badge&logo=pnpm&logoColor=cdd6f4&labelColor=1e1e2e)](https://pnpm.io)
-[![Paraglide](https://img.shields.io/badge/i18n-Paraglide-a6e3a1?style=for-the-badge&labelColor=1e1e2e)](https://inlang.com/m/gerre34r/library-inlang-paraglideJs)
+[![SvelteKit 3](https://img.shields.io/badge/SvelteKit_3-1e1e2e?style=for-the-badge&logo=svelte&logoColor=f38ba8)](https://svelte.dev/docs/kit)
+[![Svelte 5](https://img.shields.io/badge/Svelte_5-1e1e2e?style=for-the-badge&logo=svelte&logoColor=fab387)](https://svelte.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-1e1e2e?style=for-the-badge&logo=typescript&logoColor=89b4fa)](https://www.typescriptlang.org)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-1e1e2e?style=for-the-badge&logo=tailwindcss&logoColor=89dceb)](https://tailwindcss.com)
+[![Vite](https://img.shields.io/badge/Vite-1e1e2e?style=for-the-badge&logo=vite&logoColor=cba6f7)](https://vite.dev)
+[![pnpm](https://img.shields.io/badge/pnpm-1e1e2e?style=for-the-badge&logo=pnpm&logoColor=f9e2af)](https://pnpm.io)
+[![Paraglide](https://img.shields.io/badge/Paraglide_i18n-1e1e2e?style=for-the-badge&logo=googletranslate&logoColor=a6e3a1)](https://inlang.com/m/gerre34r/library-inlang-paraglideJs)
 
 Fully static and prerendered, available in English and Danish.
