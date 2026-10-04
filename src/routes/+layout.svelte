@@ -40,4 +40,8 @@
 	{/each}
 </svelte:head>
 
-{@render children()}
+<div class="mx-auto flex min-h-dvh w-full max-w-4xl flex-col px-6 sm:px-8">
+	<main class="flex-1 py-16">
+		{@render children()}
+	</main>
+</div>
