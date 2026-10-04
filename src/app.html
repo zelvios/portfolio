@@ -15,5 +15,26 @@
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>
+		<script>
+			(() => {
+				const d = document.documentElement;
+				const update = () => {
+					const max = d.scrollHeight - window.innerHeight;
+					d.style.setProperty('--scroll', String(max > 0 ? d.scrollTop / max : 0));
+				};
+				addEventListener('scroll', update, { passive: true });
+				addEventListener('resize', update);
+				update();
+
+				// close any open popover when a link inside it is clicked
+				document.addEventListener('click', (e) => {
+					const target = /** @type {Element} */ (e.target);
+					const pop = /** @type {HTMLElement | null} */ (
+						target.closest('[popover] a') && target.closest('[popover]')
+					);
+					if (pop) pop.hidePopover();
+				});
+			})();
+		</script>
 	</body>
 </html>
