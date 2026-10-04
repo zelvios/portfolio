@@ -4,7 +4,7 @@ export const prerender = true;
 
 const site = 'https://jacob-j.com';
 
-const pages = ['/'];
+const pages = ['/', '/about', '/projects', '/contact'];
 
 export function GET() {
 	const urls = pages
