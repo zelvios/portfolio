@@ -103,7 +103,7 @@
 
 @layer base {
 	html {
-		@apply bg-base font-mono font-medium text-text antialiased;
+		@apply bg-crust font-mono font-medium text-text antialiased;
 	}
 
 	::selection {
