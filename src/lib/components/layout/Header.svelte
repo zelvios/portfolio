@@ -8,6 +8,7 @@
 	import Logo from '#lib/components/ui/Logo.svelte';
 	import ScrollProgress from '#lib/components/ui/ScrollProgress.svelte';
 	import MobileMenu from '#lib/components/ui/MobileMenu.svelte';
+	import ThemeToggle from '#lib/components/ui/ThemeToggle.svelte';
 
 	const home = $derived(resolve(href('/') as Path));
 	const otherLocale = $derived(getLocale() === 'da' ? 'en' : 'da');
@@ -43,6 +44,9 @@
 		>
 			{otherLocale}
 		</a>
+	</li>
+	<li>
+		<ThemeToggle label={m.theme_toggle()} class={itemClass} />
 	</li>
 {/snippet}
 
