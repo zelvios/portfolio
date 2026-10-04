@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import { getLocale, locales, localizeHref } from '#lib/paraglide/runtime.js';
+	import { getLocale, locales } from '#lib/paraglide/runtime.js';
+	import { href } from '#lib/i18n.js';
 	import * as m from '#lib/paraglide/messages.js';
+	import Header from '#lib/components/layout/Header.svelte';
 	import './layout.css';
 	import favicon from '#lib/assets/favicon.svg';
 
@@ -32,16 +34,13 @@
 	<meta content="summary_large_image" name="twitter:card" />
 
 	{#each locales as locale (locale)}
-		<link
-			rel="alternate"
-			hreflang={locale}
-			href={site + localizeHref(page.url.pathname, { locale })}
-		/>
+		<link rel="alternate" hreflang={locale} href={site + href(page.url.pathname, locale)} />
 	{/each}
 </svelte:head>
 
-<div class="mx-auto flex min-h-dvh w-full max-w-4xl flex-col px-6 sm:px-8">
-	<main class="flex-1 py-16">
+<div class="flex min-h-dvh flex-col">
+	<Header />
+	<main class="mx-auto w-full max-w-3xl flex-1 px-6 py-16 sm:px-8">
 		{@render children()}
 	</main>
 </div>
