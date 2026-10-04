@@ -16,7 +16,7 @@ export default defineConfig({
 					filename.split(/[/\\]/).includes('node_modules') ? undefined : true
 			},
 			adapter: adapter(),
-			inlineStyleThreshold: 8192,
+			inlineStyleThreshold: 32 * 1024,
 			paths: { relative: false }
 		}),
 
