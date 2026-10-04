@@ -16,13 +16,15 @@ export default defineConfig({
 					filename.split(/[/\\]/).includes('node_modules') ? undefined : true
 			},
 			adapter: adapter(),
-			inlineStyleThreshold: 8192
+			inlineStyleThreshold: 8192,
+			paths: { relative: false }
 		}),
 
 		paraglideVitePlugin({
 			project: './project.inlang',
 			outdir: './src/lib/paraglide',
-			emitTsDeclarations: true
+			emitTsDeclarations: true,
+			strategy: ['url', 'baseLocale']
 		})
 	]
 });
