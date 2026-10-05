@@ -27,5 +27,12 @@
 	"theme_toggle": "Skift tema",
 
 	"hero_role": "- Softwareudvikler -",
-	"read_more": "Læs mere"
+	"read_more": "Læs mere",
+
+	"intro_label": "Hej",
+	"intro_pre": "Softwareudvikler, der primært arbejder i Rust og C#. Vil du have den lange version, er der mere",
+	"intro_link": "om mig",
+	"intro_post": ".",
+	"intro_stack_label": "Teknologier",
+	"intro_from": "Fra Danmark"
 }

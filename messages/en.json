@@ -27,5 +27,12 @@
 	"theme_toggle": "Toggle theme",
 
 	"hero_role": "- Software developer -",
-	"read_more": "Read more"
+	"read_more": "Read more",
+
+	"intro_label": "Hello",
+	"intro_pre": "Software developer working mostly in Rust and C#. If you want the longer version, there's more",
+	"intro_link": "about me",
+	"intro_post": ".",
+	"intro_stack_label": "Technologies",
+	"intro_from": "From Denmark"
 }
