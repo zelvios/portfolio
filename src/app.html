@@ -30,6 +30,19 @@
 			(() => {
 				const d = document.documentElement;
 
+				const sentinel = document.querySelector('[data-sticky-sentinel]');
+				if (sentinel && sentinel.nextElementSibling) {
+					const target = sentinel.nextElementSibling;
+					new IntersectionObserver(
+						([entry]) =>
+							target.toggleAttribute(
+								'data-stuck',
+								!entry.isIntersecting && entry.boundingClientRect.top < 0
+							),
+						{ rootMargin: '-1px 0px 0px 0px' }
+					).observe(sentinel);
+				}
+
 				// scroll progress
 				const update = () => {
 					const max = d.scrollHeight - window.innerHeight;
@@ -48,7 +61,7 @@
 					if (pop) pop.hidePopover();
 				});
 
-				// theme toggle with circle reveal
+				// theme toggle
 				document.addEventListener('click', (e) => {
 					const btn = /** @type {HTMLElement | null} */ (
 						/** @type {Element} */ (e.target).closest('[data-theme-toggle]')
@@ -76,6 +89,66 @@
 						);
 					});
 				});
+
+				// scroll-stepped highlights
+				document.querySelectorAll('[data-reveal]').forEach((track) => {
+					const slides = [...track.querySelectorAll('[data-slide]')];
+					const figures = [...track.querySelectorAll('[data-figure]')];
+					const n = slides.length;
+					const update = () => {
+						const r = track.getBoundingClientRect();
+						const stage = track.firstElementChild.getBoundingClientRect().height;
+						const total = Math.max(r.height - stage, 1);
+						const p = Math.min(Math.max(-r.top / total, 0), 0.9999);
+						const k = Math.floor(p * n);
+						track.style.setProperty('--p', String(p * n - k));
+						slides.forEach((s, i) => s.toggleAttribute('data-active', i === k));
+						figures.forEach((f, i) => f.toggleAttribute('data-active', i === k));
+					};
+					addEventListener('scroll', update, { passive: true });
+					addEventListener('resize', update);
+					update();
+				});
+
+				// timed image carousel in highlight figures
+				document.querySelectorAll('[data-carousel]').forEach((fig) => {
+					const shots = [...fig.querySelectorAll('[data-shot]')];
+					const n = shots.length;
+					const per = 8000;
+					const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+					let start = 0;
+					let wasActive = false;
+					fig.addEventListener('click', (e) => {
+						const btn = /** @type {Element} */ (e.target).closest('[data-goto]');
+						if (!btn) return;
+						const k = Number(/** @type {HTMLElement} */ (btn).dataset.goto);
+						start = performance.now() - k * per;
+					});
+					const tick = (now) => {
+						const active = fig.hasAttribute('data-active');
+						if (active && !wasActive) start = now;
+						if (!active && wasActive) shots.forEach((s) => s.removeAttribute('data-current'));
+						wasActive = active;
+						if (active) {
+							const p = reduce || n === 1 ? 1 : ((now - start) % (n * per)) / (n * per);
+							const cur = reduce ? 0 : Math.min(Math.floor(p * n), n - 1);
+							fig.style.setProperty('--p', String(p));
+							shots.forEach((s, i) => s.toggleAttribute('data-current', i === cur));
+						}
+						requestAnimationFrame(tick);
+					};
+					requestAnimationFrame(tick);
+				});
+
+				// close an open lightbox when the page scrolls
+				addEventListener(
+					'scroll',
+					() =>
+						document
+							.querySelectorAll('[data-lightbox]:popover-open')
+							.forEach((p) => p.hidePopover()),
+					{ passive: true }
+				);
 			})();
 		</script>
 	</body>

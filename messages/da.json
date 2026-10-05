@@ -24,5 +24,37 @@
 	"contact_meta_title": "Kontakt – Jacob Jørgensen",
 	"contact_description": "Skriv til mig om arbejde, samarbejde eller bare for at sige hej.",
 
-	"theme_toggle": "Skift tema"
+	"theme_toggle": "Skift tema",
+
+	"hero_role": "- Softwareudvikler -",
+	"read_more": "Læs mere",
+
+	"intro_label": "Hej",
+	"intro_pre": "Softwareudvikler, der primært arbejder i Rust og C#. Vil du have den lange version, er der mere",
+	"intro_link": "om mig",
+	"intro_post": ".",
+	"intro_stack_label": "Teknologier",
+	"intro_from": "Fra Danmark",
+
+	"method_label": "Sådan arbejder jeg",
+	"work_values_label": "Det, jeg går op i",
+	"work_values_1": "Ting, der gør én ting godt",
+	"work_values_2": "Kode, den næste kan læse",
+	"work_values_3": "Hurtigt som standard",
+	"work_method_label": "Sådan arbejder jeg",
+	"work_process_label": "Proces",
+	"work_arch_label": "Arkitektur",
+
+	"hl_label": "Højdepunkter",
+	"hl_1_title": "SenseCare, en IoT-platform til hospitalsstuer",
+	"hl_1_text": "ESP32-noder i hver stue rapporterer temperatur, luftfugtighed og servicekald. Et Rust-API gemmer og serverer data, og et SvelteKit-dashboard giver personalet et live overblik over alle stuer.",
+	"hl_2_title": "Denne side, bygget til næsten ingen JavaScript",
+	"hl_2_text": "SvelteKit med adapter-static prerenderer alle sider til ren HTML, så intet kører på en server, og de fleste sider sender nul JS til klienten. Kritisk CSS er inlinet, skrifttyperne er selvhostede og subsettet, og Paraglide kompilerer de danske og engelske tekster ved build.",
+	"hl_image": "Billede {n}",
+	"hl_scroll_hint": "Scroll videre for at læse mere",
+	"hl_zoom": "Se i fuld størrelse",
+	"hl_close": "Luk",
+
+	"outro_text": "Vil du se mere? Kig på projekterne, eller skriv til mig.",
+	"outro_status": "Åben for nye muligheder - Danmark"
 }
