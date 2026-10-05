@@ -1,4 +1,8 @@
 <script lang="ts">
+	import type { Path } from '$app/types';
+	import { resolve } from '$app/paths';
+	import { ArrowRight } from '@lucide/svelte';
+	import { href } from '#lib/i18n.js';
 	import * as m from '#lib/paraglide/messages.js';
 	import GridFrame from '#lib/components/ui/GridFrame.svelte';
 	import GridCell from '#lib/components/ui/GridCell.svelte';
@@ -58,9 +62,27 @@
 			<Highlights />
 		</GridCell>
 
-		<GridCell class="sm:col-span-2">
-			{@render label('05', m.contact_title())}
-			<p class="mt-4 text-sm leading-relaxed text-subtext0">asdasdasd</p>
+		<GridCell class="items-center text-center sm:col-span-2">
+			<p class="max-w-md font-bold tracking-tight text-base text-text">{m.outro_text()}</p>
+			<div class="mt-6 flex flex-wrap justify-center gap-3">
+				<a
+					href={resolve(href('/projects') as Path)}
+					class="inline-flex h-9 items-center gap-2 rounded-md bg-accent px-3.5 text-xs font-bold text-crust transition-colors hover:bg-accent-bright"
+				>
+					{m.nav_projects()}
+					<ArrowRight class="size-3.5" aria-hidden="true" />
+				</a>
+				<a
+					href={resolve(href('/contact') as Path)}
+					class="inline-flex h-9 items-center rounded-md border border-surface1 bg-mantle px-3.5 text-xs font-bold text-text transition-colors hover:border-accent hover:text-accent"
+				>
+					{m.nav_contact()}
+				</a>
+			</div>
+			<p class="mt-6 flex items-center gap-2 text-xs text-subtext0">
+				<span class="size-2 rounded-full bg-green" aria-hidden="true"></span>
+				{m.outro_status()}
+			</p>
 		</GridCell>
 	</GridFrame>
 </section>

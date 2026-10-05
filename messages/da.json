@@ -53,5 +53,8 @@
 	"hl_image": "Billede {n}",
 	"hl_scroll_hint": "Scroll videre for at læse mere",
 	"hl_zoom": "Se i fuld størrelse",
-	"hl_close": "Luk"
+	"hl_close": "Luk",
+
+	"outro_text": "Vil du se mere? Kig på projekterne, eller skriv til mig.",
+	"outro_status": "Åben for nye muligheder - Danmark"
 }

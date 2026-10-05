@@ -53,5 +53,8 @@
 	"hl_image": "Image {n}",
 	"hl_scroll_hint": "Keep scrolling to read on",
 	"hl_zoom": "View full size",
-	"hl_close": "Close"
+	"hl_close": "Close",
+
+	"outro_text": "Want to see more? Have a look at the projects, or get in touch.",
+	"outro_status": "Open to opportunities - Denmark"
 }
