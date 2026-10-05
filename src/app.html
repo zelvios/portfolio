@@ -30,6 +30,19 @@
 			(() => {
 				const d = document.documentElement;
 
+				const sentinel = document.querySelector('[data-sticky-sentinel]');
+				if (sentinel && sentinel.nextElementSibling) {
+					const target = sentinel.nextElementSibling;
+					new IntersectionObserver(
+						([entry]) =>
+							target.toggleAttribute(
+								'data-stuck',
+								!entry.isIntersecting && entry.boundingClientRect.top < 0
+							),
+						{ rootMargin: '-1px 0px 0px 0px' }
+					).observe(sentinel);
+				}
+
 				// scroll progress
 				const update = () => {
 					const max = d.scrollHeight - window.innerHeight;
@@ -48,7 +61,7 @@
 					if (pop) pop.hidePopover();
 				});
 
-				// theme toggle with circle reveal
+				// theme toggle
 				document.addEventListener('click', (e) => {
 					const btn = /** @type {HTMLElement | null} */ (
 						/** @type {Element} */ (e.target).closest('[data-theme-toggle]')

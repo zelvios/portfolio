@@ -8,8 +8,8 @@
 	type="button"
 	data-theme-toggle
 	aria-label={label}
-	class="rounded p-1 text-subtext0 transition-colors hover:text-accent {className}"
+	class="text-subtext0 transition-colors hover:text-accent {className}"
 >
-	<Sun class="size-5 not-dark:hidden" aria-hidden="true" />
-	<Moon class="size-5 dark:hidden" aria-hidden="true" />
+	<Sun class="size-4 not-dark:hidden" aria-hidden="true" />
+	<Moon class="size-4 dark:hidden" aria-hidden="true" />
 </button>
