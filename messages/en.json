@@ -24,5 +24,8 @@
 	"contact_meta_title": "Contact – Jacob Jørgensen",
 	"contact_description": "Get in touch about work, collaboration or just to say hi.",
 
-	"theme_toggle": "Toggle theme"
+	"theme_toggle": "Toggle theme",
+
+	"hero_role": "- Software developer -",
+	"read_more": "Read more"
 }
