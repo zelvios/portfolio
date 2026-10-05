@@ -4,6 +4,7 @@
 	import GridCell from '#lib/components/ui/GridCell.svelte';
 	import BrowserFrame from '#lib/components/ui/BrowserFrame.svelte';
 	import GitFlow from '#lib/components/ui/GitFlow.svelte';
+	import Highlights from '#lib/components/sections/Highlights.svelte';
 </script>
 
 {#snippet label(index: string, text: string)}
@@ -13,7 +14,7 @@
 	</h2>
 {/snippet}
 
-<section id="work" class="mt-32">
+<section id="work" class="mt-48">
 	<GridFrame cols="sm:grid-cols-[1fr_2fr]">
 		<GridCell>
 			{@render label('02', m.work_values_label())}
@@ -52,9 +53,9 @@
 			</BrowserFrame>
 		</GridCell>
 
-		<GridCell class="sm:col-span-2">
-			{@render label('04', m.projects_title())}
-			<p class="mt-4 text-sm leading-relaxed text-subtext0">asdasdasd</p>
+		<GridCell class="sm:col-span-2" fadeSides>
+			{@render label('04', m.hl_label())}
+			<Highlights />
 		</GridCell>
 
 		<GridCell class="sm:col-span-2">

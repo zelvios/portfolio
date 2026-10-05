@@ -134,6 +134,10 @@
 }
 
 @layer base {
+	button:not(:disabled) {
+		cursor: pointer;
+	}
+
 	html,
 	body {
 		overflow-x: clip;

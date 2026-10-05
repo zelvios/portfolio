@@ -43,5 +43,15 @@
 	"work_values_3": "Hurtigt som standard",
 	"work_method_label": "Sådan arbejder jeg",
 	"work_process_label": "Proces",
-	"work_arch_label": "Arkitektur"
+	"work_arch_label": "Arkitektur",
+
+	"hl_label": "Højdepunkter",
+	"hl_1_title": "SenseCare, en IoT-platform til hospitalsstuer",
+	"hl_1_text": "ESP32-noder i hver stue rapporterer temperatur, luftfugtighed og servicekald. Et Rust-API gemmer og serverer data, og et SvelteKit-dashboard giver personalet et live overblik over alle stuer.",
+	"hl_2_title": "Denne side, bygget til næsten ingen JavaScript",
+	"hl_2_text": "SvelteKit med adapter-static prerenderer alle sider til ren HTML, så intet kører på en server, og de fleste sider sender nul JS til klienten. Kritisk CSS er inlinet, skrifttyperne er selvhostede og subsettet, og Paraglide kompilerer de danske og engelske tekster ved build.",
+	"hl_image": "Billede {n}",
+	"hl_scroll_hint": "Scroll videre for at læse mere",
+	"hl_zoom": "Se i fuld størrelse",
+	"hl_close": "Luk"
 }

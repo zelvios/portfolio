@@ -43,5 +43,15 @@
 	"work_values_3": "Fast by default",
 	"work_method_label": "How I work",
 	"work_process_label": "Process",
-	"work_arch_label": "Architecture"
+	"work_arch_label": "Architecture",
+
+	"hl_label": "Highlights",
+	"hl_1_title": "SenseCare, an IoT platform for hospital rooms",
+	"hl_1_text": "ESP32 nodes in each room report temperature, humidity and service calls. A Rust API stores and serves the data, and a SvelteKit dashboard gives staff a live overview of every room.",
+	"hl_2_title": "This site, built to ship almost no JavaScript",
+	"hl_2_text": "SvelteKit with adapter-static prerenders every page to plain HTML, so nothing runs on a server and most pages ship zero client JS. Critical CSS is inlined, the fonts are self-hosted and subset, and Paraglide compiles the Danish and English strings at build time.",
+	"hl_image": "Image {n}",
+	"hl_scroll_hint": "Keep scrolling to read on",
+	"hl_zoom": "View full size",
+	"hl_close": "Close"
 }
