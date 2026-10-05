@@ -41,5 +41,7 @@
 	"work_values_1": "Ting, der gør én ting godt",
 	"work_values_2": "Kode, den næste kan læse",
 	"work_values_3": "Hurtigt som standard",
-	"work_method_label": "Sådan arbejder jeg"
+	"work_method_label": "Sådan arbejder jeg",
+	"work_process_label": "Proces",
+	"work_arch_label": "Arkitektur"
 }

@@ -41,5 +41,7 @@
 	"work_values_1": "Things that do one thing well",
 	"work_values_2": "Code the next person can read",
 	"work_values_3": "Fast by default",
-	"work_method_label": "How I work"
+	"work_method_label": "How I work",
+	"work_process_label": "Process",
+	"work_arch_label": "Architecture"
 }

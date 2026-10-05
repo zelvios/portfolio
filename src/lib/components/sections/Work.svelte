@@ -2,8 +2,8 @@
 	import * as m from '#lib/paraglide/messages.js';
 	import GridFrame from '#lib/components/ui/GridFrame.svelte';
 	import GridCell from '#lib/components/ui/GridCell.svelte';
-
-	const methods = ['Scrum', 'Git', 'CI/CD', 'Code review'];
+	import BrowserFrame from '#lib/components/ui/BrowserFrame.svelte';
+	import GitFlow from '#lib/components/ui/GitFlow.svelte';
 </script>
 
 {#snippet label(index: string, text: string)}
@@ -17,7 +17,7 @@
 	<GridFrame cols="sm:grid-cols-[1fr_2fr]">
 		<GridCell>
 			{@render label('02', m.work_values_label())}
-			<ul class="mt-4 divide-y divide-surface0 text-sm text-text">
+			<ul class="my-auto divide-y divide-surface0 text-sm text-text">
 				<li class="py-2.5 first:pt-0">{m.work_values_1()}</li>
 				<li class="py-2.5 first:pt-0">{m.work_values_2()}</li>
 				<li class="py-2.5 last:pb-0">{m.work_values_3()}</li>
@@ -25,12 +25,31 @@
 		</GridCell>
 
 		<GridCell>
-			{@render label('03', m.method_label())}
-			<ul class="mt-4 flex flex-wrap gap-2 text-xs text-subtext0">
-				{#each methods as item (item)}
-					<li class="rounded border border-surface0 bg-mantle px-2 py-1">{item}</li>
-				{/each}
-			</ul>
+			{@render label('03', m.work_method_label())}
+			<BrowserFrame
+				class="mt-4"
+				url="github.com/zelvios/sensecare"
+				href="https://github.com/zelvios/sensecare"
+			>
+				<GitFlow />
+
+				<dl
+					class="mt-6 flex flex-wrap items-start gap-x-12 gap-y-4 border-t border-surface0 pt-5 text-xs"
+				>
+					<div>
+						<dt class="font-bold tracking-[0.2em] text-subtext0 uppercase">
+							{m.work_process_label()}
+						</dt>
+						<dd class="mt-1.5 text-text">Agile - Scrum - Kanban - Issues - Pull requests</dd>
+					</div>
+					<div>
+						<dt class="font-bold tracking-[0.2em] text-subtext0 uppercase">
+							{m.work_arch_label()}
+						</dt>
+						<dd class="mt-1.5 text-text">Layered</dd>
+					</div>
+				</dl>
+			</BrowserFrame>
 		</GridCell>
 
 		<GridCell class="sm:col-span-2">
