@@ -34,5 +34,12 @@
 	"intro_link": "about me",
 	"intro_post": ".",
 	"intro_stack_label": "Technologies",
-	"intro_from": "From Denmark"
+	"intro_from": "From Denmark",
+
+	"method_label": "How I work",
+	"work_values_label": "What I care about",
+	"work_values_1": "Things that do one thing well",
+	"work_values_2": "Code the next person can read",
+	"work_values_3": "Fast by default",
+	"work_method_label": "How I work"
 }

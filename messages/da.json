@@ -34,5 +34,12 @@
 	"intro_link": "om mig",
 	"intro_post": ".",
 	"intro_stack_label": "Teknologier",
-	"intro_from": "Fra Danmark"
+	"intro_from": "Fra Danmark",
+
+	"method_label": "Sådan arbejder jeg",
+	"work_values_label": "Det, jeg går op i",
+	"work_values_1": "Ting, der gør én ting godt",
+	"work_values_2": "Kode, den næste kan læse",
+	"work_values_3": "Hurtigt som standard",
+	"work_method_label": "Sådan arbejder jeg"
 }
