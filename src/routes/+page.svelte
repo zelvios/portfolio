@@ -10,6 +10,3 @@
 <Header hero />
 <Intro />
 <Work />
-
-<!-- TEMP: scroll room for testing the sticky header -->
-<div class="h-[200vh]"></div>
