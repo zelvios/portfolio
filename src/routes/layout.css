@@ -28,6 +28,11 @@
 :root {
 	color-scheme: dark;
 
+	/* defaults for the dot-beam animation */
+	--beam-at: 0px;
+	--beam-delay: 0s;
+	--beam-duration: 7s;
+
 	--ctp-crust: light-dark(#dce0e8, #11111b);
 	--ctp-mantle: light-dark(#e6e9ef, #181825);
 	--ctp-base: light-dark(#eff1f5, #1e1e2e);
@@ -105,6 +110,27 @@
 	--color-red: var(--ctp-red);
 	--color-blue: var(--ctp-blue);
 	--color-mauve: var(--ctp-mauve);
+
+	/* Dot-beam animation (DotPattern) */
+	--animate-beam-x: beam-x var(--beam-duration) linear var(--beam-delay) infinite;
+	--animate-beam-y: beam-y var(--beam-duration) linear var(--beam-delay) infinite;
+
+	@keyframes beam-x {
+		from {
+			mask-position: -320px var(--beam-at);
+		}
+		to {
+			mask-position: calc(100% + 320px) var(--beam-at);
+		}
+	}
+	@keyframes beam-y {
+		from {
+			mask-position: var(--beam-at) -320px;
+		}
+		to {
+			mask-position: var(--beam-at) calc(100% + 320px);
+		}
+	}
 }
 
 @layer base {
