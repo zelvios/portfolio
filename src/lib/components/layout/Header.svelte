@@ -41,24 +41,24 @@
 {/snippet}
 
 <header
-	data-stuck={!hero || undefined}
 	class="group sticky top-0 isolate z-40
-		before:absolute before:inset-y-0 before:left-1/2 before:-z-10 before:w-screen before:-translate-x-1/2
-		before:border-b before:border-transparent before:transition-colors before:duration-300
-		data-stuck:before:border-surface0 data-stuck:before:bg-crust/80 data-stuck:before:backdrop-blur"
+	before:absolute before:inset-y-0 before:left-1/2 before:-z-10 before:w-screen before:-translate-x-1/2
+	before:border-b before:border-transparent before:transition-colors before:duration-300
+	data-stuck:before:border-surface0 data-stuck:before:bg-crust/80 data-stuck:before:backdrop-blur"
+	data-stuck={!hero || undefined}
 >
 	<nav
 		aria-label={m.nav_label()}
-		class="mx-auto flex min-h-14 w-full max-w-3xl flex-wrap items-center justify-center gap-3 py-2
-		group-data-stuck:grid group-data-stuck:h-14 group-data-stuck:grid-cols-[1fr_auto_1fr] group-data-stuck:gap-0 group-data-stuck:py-0
-		sm:grid sm:h-14 sm:grid-cols-[1fr_auto_1fr] sm:gap-0 sm:py-0
+		class="mx-auto flex min-h-14 w-full max-w-3xl flex-wrap items-center justify-center gap-x-3 gap-y-6 py-2
+		group-data-stuck:grid group-data-stuck:h-14 group-data-stuck:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] group-data-stuck:gap-0 group-data-stuck:py-0
+		sm:grid sm:h-14 sm:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] sm:gap-0 sm:py-0
 		{hero ? '' : 'px-4 sm:px-8'}"
 	>
 		<!-- logo: reserved space -->
 		<a
-			href={home}
 			aria-label={m.nav_home()}
 			class="invisible hidden items-center gap-2 justify-self-start font-bold opacity-0 transition-opacity duration-300 group-data-stuck:visible group-data-stuck:flex group-data-stuck:opacity-100 hover:text-accent sm:flex"
+			href={home}
 		>
 			<Logo class="size-6" />
 			<span class="hidden sm:inline">jacob-j</span>
@@ -71,45 +71,49 @@
 			{@render navLinks(pill)}
 		</ul>
 
+		<span aria-hidden="true" class="basis-full group-data-stuck:hidden sm:hidden"></span>
+
 		<!-- language and theme -->
 		<ul
 			class="flex items-center divide-x divide-surface1 justify-self-end overflow-hidden rounded-md border border-surface1 bg-mantle text-xs text-text group-data-stuck:text-subtext0 max-sm:group-data-stuck:hidden"
 		>
 			<li>
 				<a
+					aria-label={m.nav_switch_locale()}
+					class="flex h-7 items-center px-2 font-bold uppercase transition-colors hover:text-accent"
+					data-sveltekit-reload
 					href={switchHref}
 					hreflang={otherLocale}
 					lang={otherLocale}
-					data-sveltekit-reload
-					aria-label={m.nav_switch_locale()}
-					class="flex h-7 items-center px-2 font-bold uppercase transition-colors hover:text-accent"
 				>
 					{otherLocale}
 				</a>
 			</li>
-			<li><ThemeToggle label={m.theme_toggle()} class="flex h-7 items-center px-2" /></li>
+			<li>
+				<ThemeToggle class="flex h-7 items-center px-2" label={m.theme_toggle()} />
+			</li>
 		</ul>
 
 		<!-- mobile burger -->
 		<MobileMenu
+			class="hidden justify-self-end max-sm:group-data-stuck:block sm:hidden"
 			id="mobile-menu"
 			label={m.nav_menu()}
-			class="hidden justify-self-end max-sm:group-data-stuck:block sm:hidden"
 		>
 			<ul class="flex flex-col">
 				{@render navLinks('block rounded px-3 py-2 hover:bg-surface0')}
 				<li>
 					<a
+						aria-label={m.nav_switch_locale()}
+						class="block rounded px-3 py-2 font-bold uppercase hover:bg-surface0"
+						data-sveltekit-reload
 						href={switchHref}
 						hreflang={otherLocale}
-						lang={otherLocale}
-						data-sveltekit-reload
-						aria-label={m.nav_switch_locale()}
-						class="block rounded px-3 py-2 font-bold uppercase hover:bg-surface0">{otherLocale}</a
+						lang={otherLocale}>{otherLocale}</a
 					>
 				</li>
 				<li>
-					<ThemeToggle label={m.theme_toggle()} class="block rounded px-3 py-2 hover:bg-surface0" />
+					<ThemeToggle class="block rounded px-3 py-2 hover:bg-surface0" label={m.theme_toggle()} />
 				</li>
 			</ul>
 		</MobileMenu>
