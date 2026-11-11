@@ -49,7 +49,7 @@
 >
 	<nav
 		aria-label={m.nav_label()}
-		class="mx-auto flex min-h-14 w-full max-w-3xl flex-wrap items-center justify-center gap-x-3 gap-y-6 py-2
+		class="mx-auto flex min-h-14 w-full max-w-4xl flex-wrap items-center justify-center gap-x-3 gap-y-6 py-2
 		group-data-stuck:grid group-data-stuck:h-14 group-data-stuck:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] group-data-stuck:gap-0 group-data-stuck:py-0
 		sm:grid sm:h-14 sm:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] sm:gap-0 sm:py-0
 		{hero ? '' : 'px-4 sm:px-8'}"
