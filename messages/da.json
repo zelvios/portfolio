@@ -1,8 +1,8 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 
-	"meta_title": "Jacob Jørgensen – Softwareudvikler",
-	"meta_description": "Portfolio for Jacob Jørgensen, softwareudvikler i Danmark der primært arbejder med Rust og C#.",
+	"meta_title": "Jacob Jørgensen - Portfolio | Softwareudvikler",
+	"meta_description": "Portfolio for Jacob Jørgensen, softwareudvikler i Danmark. Projekter i Rust og C#, hvordan jeg arbejder, og hvordan du kontakter mig.",
 
 	"nav_label": "Hovednavigation",
 	"nav_home": "Forside",

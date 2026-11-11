@@ -2,6 +2,6 @@
 
 Portfolio of a software developer in Denmark working mainly with Rust and C#.
 
-- [Home (English)](https://jacob-j.com/en)
+- [Home (English)](https://jacob-j.com/)
 - [Home (Danish)](https://jacob-j.com/da)
 - [GitHub](https://github.com/zelvios)
