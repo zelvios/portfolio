@@ -9,6 +9,7 @@
 	import BrowserFrame from '#lib/components/ui/BrowserFrame.svelte';
 	import GitFlow from '#lib/components/ui/GitFlow.svelte';
 	import Highlights from '#lib/components/sections/Highlights.svelte';
+	import ButtonLink from '#lib/components/ui/ButtonLink.svelte';
 </script>
 
 {#snippet label(text: string)}
@@ -63,26 +64,16 @@
 		</GridCell>
 
 		<GridCell class="items-center text-center sm:col-span-2">
-			<p class="max-w-md font-bold tracking-tight text-base">{m.outro_text()}</p>
-			<div class="mt-6 flex flex-wrap justify-center gap-3">
-				<a
-					href={resolve(href('/projects') as Path)}
-					class="inline-flex h-9 items-center gap-2 rounded-md bg-accent px-3.5 text-xs font-bold text-crust transition-colors hover:bg-accent-bright"
-				>
+			<p class="max-w-md font-bold tracking-tight text-text">{m.outro_text()}</p>
+			<div class="mt-8 flex flex-wrap justify-center gap-3">
+				<ButtonLink href={resolve(href('/projects') as Path)}>
 					{m.nav_projects()}
 					<ArrowRight class="size-3.5" aria-hidden="true" />
-				</a>
-				<a
-					href={resolve(href('/contact') as Path)}
-					class="inline-flex h-9 items-center rounded-md border border-surface1 bg-mantle px-3.5 text-xs font-bold text-text transition-colors hover:border-accent hover:text-accent"
-				>
+				</ButtonLink>
+				<ButtonLink href={resolve(href('/contact') as Path)}>
 					{m.nav_contact()}
-				</a>
+				</ButtonLink>
 			</div>
-			<p class="mt-6 flex items-center gap-2 text-xs text-subtext0">
-				<span class="size-2 rounded-full bg-green" aria-hidden="true"></span>
-				{m.outro_status()}
-			</p>
 		</GridCell>
 	</GridFrame>
 </section>
