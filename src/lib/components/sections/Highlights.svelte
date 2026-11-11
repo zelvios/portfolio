@@ -39,14 +39,13 @@
 <div data-reveal class="relative mt-4" style="height: calc({items.length} * 120dvh)">
 	<div class="sticky top-20 flex h-[calc(100dvh-6rem)] flex-col justify-center gap-4 py-6">
 		<div class="grid">
-			{#each items as item, i (item.title)}
+			{#each items as item (item.title)}
 				{@const seq = sequence(item.title, item.text)}
 				<div
 					data-slide
 					class="invisible col-start-1 row-start-1 flex flex-col pr-10 data-active:visible"
 				>
-					<span class="text-xs font-bold tracking-[0.2em] text-accent uppercase">0{i + 1}</span>
-					<h3 class="mt-3 text-xl font-bold tracking-tight text-text sm:text-2xl">
+					<h3 class="text-xl font-bold tracking-tight text-text sm:text-2xl">
 						{#each seq.title as part, j (j)}
 							<span class="word" style="--w: {part.pos}">{part.w + ' '}</span>
 						{/each}
