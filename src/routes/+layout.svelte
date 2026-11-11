@@ -45,7 +45,7 @@
 	{#if page.route.id !== '/'}
 		<Header />
 	{/if}
-	<main class="mx-auto w-full max-w-3xl flex-1 px-6 py-16 sm:px-8">
+	<main class="mx-auto w-full max-w-4xl flex-1 px-6 py-16 sm:px-8">
 		{@render children()}
 	</main>
 </div>

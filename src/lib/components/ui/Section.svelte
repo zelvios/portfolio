@@ -3,13 +3,12 @@
 
 	interface Props {
 		title: string;
-		index?: string;
 		id?: string;
 		class?: string;
 		children?: Snippet;
 	}
 
-	let { title, index, id, class: className = '', children }: Props = $props();
+	let { title, id, class: className = '', children }: Props = $props();
 </script>
 
 <section {id} class="relative py-16 {className}">
@@ -23,11 +22,9 @@
 		class="absolute top-16 right-1/2 -left-16 h-[1.5px] bg-linear-to-r from-surface1 to-transparent sm:-left-32"
 	></span>
 
-	<h2
-		class="absolute top-19 left-8 flex items-baseline gap-3 text-xs font-bold tracking-[0.2em] uppercase"
-	>
-		{#if index}<span class="text-accent">{index}</span>{/if}
-		<span class="text-subtext0">{title}</span>
+	<h2 class="absolute top-19 left-8 flex items-center gap-2.5 text-sm font-bold text-accent">
+		<span class="h-px w-2 bg-accent" aria-hidden="true"></span>
+		{title}
 	</h2>
 
 	<div class="flex min-h-[30dvh] flex-col justify-center py-16 pl-8 sm:pr-8">

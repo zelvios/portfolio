@@ -1,32 +1,23 @@
 <script lang="ts">
-	import type { Path } from '$app/types';
-	import { resolve } from '$app/paths';
-	import { MapPin } from '@lucide/svelte';
-	import { href } from '#lib/i18n.js';
+	import { ChevronDown, MapPin } from '@lucide/svelte';
 	import * as m from '#lib/paraglide/messages.js';
 	import Section from '#lib/components/ui/Section.svelte';
 	import DenmarkDots from '#lib/components/ui/DenmarkDots.svelte';
-
-	const stack = ['Rust', 'C#', 'TypeScript', 'Svelte', 'Docker', 'PostgreSQL'];
 </script>
 
-<Section id="intro" index="01" title={m.intro_label()} class="mt-26">
+<Section id="intro" title={m.intro_label()} class="mt-26">
 	<div class="grid items-center gap-12 sm:grid-cols-2">
 		<div>
-			<p class="text-lg leading-snug font-bold tracking-tight sm:text-xl">
-				{m.intro_pre()}
-				<a href={resolve(href('/about') as Path)} class="text-accent hover:underline"
-					>{m.intro_link()}</a
-				>{m.intro_post()}
-			</p>
-			<ul
-				class="mt-6 flex flex-wrap gap-2 text-xs text-subtext0"
-				aria-label={m.intro_stack_label()}
-			>
-				{#each stack as item (item)}
-					<li class="rounded border border-surface0 bg-mantle px-2 py-1">{item}</li>
-				{/each}
+			<ul class="divide-y divide-surface0 text-sm text-text">
+				<li class="py-3 first:pt-0">{m.intro_fact_1()}</li>
+				<li class="py-3">{m.intro_fact_2()}</li>
+				<li class="py-3">{m.intro_fact_3()}</li>
+				<li class="py-3">{m.intro_fact_4()}</li>
 			</ul>
+			<p class="mt-5 flex items-center gap-1.5 text-sm text-subtext0">
+				<ChevronDown class="size-4 text-accent motion-safe:animate-bounce" aria-hidden="true" />
+				{m.intro_more()}
+			</p>
 		</div>
 
 		<figure class="flex flex-col items-center gap-4 justify-self-center sm:justify-self-end">

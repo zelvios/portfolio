@@ -23,7 +23,8 @@
 	]);
 
 	const pill =
-		'rounded-md border border-surface1 bg-mantle px-4 py-2 transition-all duration-300 group-data-stuck:border-transparent group-data-stuck:bg-transparent group-data-stuck:px-2 group-data-stuck:py-1';
+		'inline-flex h-9 items-center rounded-md border border-surface1 bg-mantle px-3.5 text-xs font-bold transition-all duration-300 hover:border-accent ' +
+		'group-data-stuck:h-auto group-data-stuck:border-transparent group-data-stuck:bg-transparent group-data-stuck:px-2 group-data-stuck:py-1 group-data-stuck:text-sm group-data-stuck:font-medium group-data-stuck:hover:border-transparent group-data-stuck:aria-[current=page]:font-bold';
 </script>
 
 {#snippet navLinks(itemClass: string)}
@@ -49,7 +50,7 @@
 >
 	<nav
 		aria-label={m.nav_label()}
-		class="mx-auto flex min-h-14 w-full max-w-3xl flex-wrap items-center justify-center gap-x-3 gap-y-6 py-2
+		class="mx-auto flex min-h-14 w-full max-w-4xl flex-wrap items-center justify-center gap-x-3 gap-y-6 py-2
 		group-data-stuck:grid group-data-stuck:h-14 group-data-stuck:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] group-data-stuck:gap-0 group-data-stuck:py-0
 		sm:grid sm:h-14 sm:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] sm:gap-0 sm:py-0
 		{hero ? '' : 'px-4 sm:px-8'}"
@@ -75,7 +76,7 @@
 
 		<!-- language and theme -->
 		<ul
-			class="flex items-center divide-x divide-surface1 justify-self-end overflow-hidden rounded-md border border-surface1 bg-mantle text-xs text-text group-data-stuck:text-subtext0 max-sm:group-data-stuck:hidden"
+			class="flex items-center divide-x divide-surface1 justify-self-end overflow-hidden rounded-md border border-surface1 bg-mantle text-xs text-text transition-colors group-data-stuck:text-subtext0 hover:border-accent max-sm:group-data-stuck:hidden"
 		>
 			<li>
 				<a
