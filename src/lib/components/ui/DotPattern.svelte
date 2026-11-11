@@ -47,7 +47,7 @@
 
 	{#each stars as star, i (i)}
 		<span
-			class="animate-twinkle absolute -translate-1/2 rounded-full bg-accent shadow-[0_0_8px_2px_var(--color-accent)] motion-reduce:hidden"
+			class="absolute -translate-1/2 animate-twinkle rounded-full bg-accent shadow-[0_0_8px_2px_var(--color-accent)] motion-reduce:hidden"
 			style={starStyle(star)}
 		></span>
 	{/each}
