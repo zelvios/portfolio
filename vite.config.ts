@@ -16,7 +16,7 @@ export default defineConfig({
 					filename.split(/[/\\]/).includes('node_modules') ? undefined : true
 			},
 			adapter: adapter(),
-			inlineStyleThreshold: 32 * 1024,
+			inlineStyleThreshold: 64 * 1024,
 			paths: { relative: false },
 			prerender: {
 				entries: ['*', '/404', '/da/404']
