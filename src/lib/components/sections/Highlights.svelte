@@ -1,12 +1,29 @@
 <script lang="ts">
 	import { ExternalLink, ChevronDown } from '@lucide/svelte';
 	import * as m from '#lib/paraglide/messages.js';
-	import sensecare1 from '#lib/assets/highlights/sensecare-1.png?enhanced';
-	import sensecare2 from '#lib/assets/highlights/sensecare-2.png?enhanced';
-	import sensecare3 from '#lib/assets/highlights/sensecare-3.png?enhanced';
-	import portfolio1 from '#lib/assets/highlights/portfolio-1.png?enhanced';
-	import portfolio2 from '#lib/assets/highlights/portfolio-2.png?enhanced';
+	import type { Picture } from '@sveltejs/enhanced-img';
 	import Shot from '#lib/components/ui/Shot.svelte';
+
+	// in page thumbnails - three widths
+	const thumbs = import.meta.glob<Picture>('/src/lib/assets/highlights/*.png', {
+		eager: true,
+		import: 'default',
+		query: { enhanced: true, w: '1600;1100;700' }
+	});
+	// lightbox: original resolution - only fetched when opened
+	const originals = import.meta.glob<string>('/src/lib/assets/highlights/*.png', {
+		eager: true,
+		import: 'default',
+		query: '?url'
+	});
+
+	const shot = (name: string, fit?: 'cover' | 'contain') => {
+		const key = `/src/lib/assets/highlights/${name}.png`;
+		const src = thumbs[key];
+		const full = originals[key];
+		if (!src || !full) throw new Error(`Missing highlight image: ${name}`);
+		return { src, full, fit };
+	};
 
 	const items = $derived([
 		{
@@ -15,7 +32,7 @@
 			text: m.hl_1_text(),
 			tag: 'ESP32 - Rust - SvelteKit - PostgreSQL',
 			repo: 'https://github.com/zelvios/sensecare',
-			images: [{ src: sensecare1 }, { src: sensecare2 }, { src: sensecare3 }]
+			images: [shot('sensecare-1'), shot('sensecare-2'), shot('sensecare-3')]
 		},
 		{
 			name: 'jacob-j.com',
@@ -23,7 +40,7 @@
 			text: m.hl_2_text(),
 			tag: 'SvelteKit - adapter-static - Tailwind - Paraglide',
 			repo: 'https://github.com/zelvios/portfolio',
-			images: [{ src: portfolio1 }, { src: portfolio2, fit: 'contain' as const }]
+			images: [shot('portfolio-1'), shot('portfolio-2', 'contain')]
 		}
 	]);
 
@@ -119,11 +136,12 @@
 											aria-label={m.hl_zoom_toggle()}
 											class="block cursor-zoom-in group-data-zoomed/lb:cursor-zoom-out"
 										>
-											<Shot
-												src={image.src}
-												sizes="90vw"
+											<img
+												src={image.full}
 												alt="{item.title} {k + 1}"
-												class="max-h-[calc(90dvh-1rem)] group-data-zoomed/lb:h-auto group-data-zoomed/lb:max-h-none group-data-zoomed/lb:w-[160vw] group-data-zoomed/lb:max-w-none"
+												loading="lazy"
+												decoding="async"
+												class="max-h-[calc(90dvh-1rem)] w-auto object-contain group-data-zoomed/lb:max-h-none group-data-zoomed/lb:w-[160vw] group-data-zoomed/lb:max-w-none"
 											/>
 										</button>
 									</div>
