@@ -13,7 +13,7 @@
 		src,
 		alt,
 		fit = 'contain',
-		sizes = '(min-width: 768px) 704px, 100vw',
+		sizes = '(min-width: 896px) 832px, 100vw',
 		class: className = ''
 	}: Props = $props();
 </script>
@@ -22,5 +22,7 @@
 	{src}
 	{alt}
 	{sizes}
+	loading="lazy"
+	decoding="async"
 	class="h-full w-full {fit === 'contain' ? 'object-contain' : 'object-cover'} {className}"
 />

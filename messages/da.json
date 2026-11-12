@@ -2,12 +2,12 @@
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 
 	"meta_title": "Jacob Jørgensen - Portfolio | Softwareudvikler",
-	"meta_description": "Portfolio for Jacob Jørgensen, softwareudvikler i Danmark. Projekter i Rust og C#, hvordan jeg arbejder, og hvordan du kontakter mig.",
+	"meta_description": "Jacobs portfolio. Jeg hedder Jacob Jørgensen og er softwareudvikler i Danmark med fokus på Rust og C#. Se projekter, arbejdsmetoder og kontakt.",
 
 	"nav_label": "Hovednavigation",
 	"nav_home": "Forside",
 	"nav_about": "Om",
-	"nav_projects": "Projekter",
+	"nav_work": "Arbejde",
 	"nav_contact": "Kontakt",
 	"nav_switch_locale": "Skift sprog",
 	"nav_menu": "Menu",
@@ -16,9 +16,9 @@
 	"about_meta_title": "Om – Jacob Jørgensen",
 	"about_description": "Hvem jeg er, hvordan jeg arbejder, og hvad jeg går op i som softwareudvikler.",
 
-	"projects_title": "Projekter",
-	"projects_meta_title": "Projekter – Jacob Jørgensen",
-	"projects_description": "Et udvalg af ting jeg har bygget, primært i Rust og C#.",
+	"work_title": "Arbejde",
+	"work_meta_title": "Arbejde – Jacob Jørgensen",
+	"work_description": "Hvor jeg har arbejdet, og hvad jeg har bygget, primært i Rust og C#.",
 
 	"contact_title": "Kontakt",
 	"contact_meta_title": "Kontakt – Jacob Jørgensen",
@@ -26,37 +26,38 @@
 
 	"theme_toggle": "Skift tema",
 
-	"hero_role": "- Softwareudvikler -",
-	"read_more": "Læs mere",
+	"hero_role": "Softwareudvikler - Portfolio",
 
 	"intro_label": "Introduktion",
-	"intro_fact_1": "Arbejder primært i Rust og C#",
-	"intro_fact_2": "Datatekniker med speciale i programmering",
-	"intro_fact_3": "Født i 2002",
-	"intro_fact_4": "Taler dansk og engelsk",
+	"intro_text": "Jeg er datatekniker med speciale i programmering, født i 2002, og arbejder primært i Rust og C#. Jeg taler dansk og engelsk.",
 	"intro_more": "Scroll videre for at lære mig at kende",
 	"intro_from": "Fra Danmark",
+	"intro_github": "Find mig på GitHub",
 
-	"method_label": "Sådan arbejder jeg",
-	"work_values_label": "Det, jeg går op i",
-	"work_values_1": "Ting, der gør én ting godt",
-	"work_values_2": "Kode, den næste kan læse",
-	"work_values_3": "Hurtigt som standard",
-	"work_method_label": "Sådan arbejder jeg",
-	"work_process_label": "Proces",
-	"work_arch_label": "Arkitektur",
+	"home_values_label": "Det, jeg går op i",
+	"home_values_1": "Ting, der gør én ting godt",
+	"home_values_2": "Kode, den næste kan læse",
+	"home_values_3": "Hurtigt som standard",
+	"home_workmethod_label": "Sådan arbejder jeg",
+	"home_workmethod_process_label": "Proces",
+	"home_workmethod_arch_label": "Arkitektur",
 
 	"hl_label": "Højdepunkter",
-	"hl_1_title": "En IoT platform til hospitalsstuer",
+	"hl_1_title": "En IoT-platform til hospitalsstuer",
 	"hl_1_text": "ESP32-noder i hver stue rapporterer temperatur, luftfugtighed og servicekald. Et Rust-API gemmer og serverer data, og et SvelteKit-dashboard giver personalet et live overblik over alle stuer.",
 	"hl_2_title": "Bygget til næsten ingen JavaScript",
 	"hl_2_text": "SvelteKit med adapter-static prerenderer alle sider til ren HTML, så intet kører på en server, og de fleste sider sender nul JS til klienten. Kritisk CSS er inlinet, skrifttyperne er selvhostede og subsettet, og Paraglide kompilerer de danske og engelske tekster ved build.",
 	"hl_image": "Billede {n}",
+	"hl_images": "Billeder",
 	"hl_scroll_hint": "Scroll videre for at læse mere",
 	"hl_zoom": "Se i fuld størrelse",
-	"hl_close": "Luk",
-	"hl_images": "Billeder",
+	"hl_zoom_toggle": "Zoom ind eller ud",
 
-	"outro_text": "Vil du se mere? Kig på projekterne, eller skriv til mig.",
-	"outro_status": "Åben for nye muligheder - Danmark"
+	"outro_text": "Vil du se mere? Kig på mit arbejde, eller skriv til mig.",
+
+	"error_404_title": "Siden blev ikke fundet",
+	"error_404_text": "Siden, du ledte efter, findes ikke, eller den er flyttet.",
+	"error_generic_title": "Noget gik galt",
+	"error_generic_text": "Der opstod en uventet fejl. Prøv igen om lidt.",
+	"error_back": "Tilbage til forsiden"
 }
