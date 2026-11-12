@@ -2,12 +2,12 @@
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 
 	"meta_title": "Jacob Jørgensen - Portfolio | Softwareudvikler",
-	"meta_description": "Portfolio for Jacob Jørgensen, softwareudvikler i Danmark. Projekter i Rust og C#, hvordan jeg arbejder, og hvordan du kontakter mig.",
+	"meta_description": "Jacobs portfolio. Jeg hedder Jacob Jørgensen og er softwareudvikler i Danmark med fokus på Rust og C#. Se projekter, arbejdsmetoder og kontakt.",
 
 	"nav_label": "Hovednavigation",
 	"nav_home": "Forside",
 	"nav_about": "Om",
-	"nav_projects": "Projekter",
+	"nav_work": "Arbejde",
 	"nav_contact": "Kontakt",
 	"nav_switch_locale": "Skift sprog",
 	"nav_menu": "Menu",
@@ -16,9 +16,9 @@
 	"about_meta_title": "Om – Jacob Jørgensen",
 	"about_description": "Hvem jeg er, hvordan jeg arbejder, og hvad jeg går op i som softwareudvikler.",
 
-	"projects_title": "Projekter",
-	"projects_meta_title": "Projekter – Jacob Jørgensen",
-	"projects_description": "Et udvalg af ting jeg har bygget, primært i Rust og C#.",
+	"work_title": "Arbejde",
+	"work_meta_title": "Arbejde - Jacob Jørgensen",
+	"work_description": "Hvor jeg har arbejdet, og hvad jeg har bygget, primært i Rust og C#.",
 
 	"contact_title": "Kontakt",
 	"contact_meta_title": "Kontakt – Jacob Jørgensen",
@@ -26,7 +26,7 @@
 
 	"theme_toggle": "Skift tema",
 
-	"hero_role": "- Softwareudvikler -",
+	"hero_role": "Softwareudvikler - Portfolio",
 	"read_more": "Læs mere",
 
 	"intro_label": "Introduktion",
@@ -38,13 +38,13 @@
 	"intro_from": "Fra Danmark",
 
 	"method_label": "Sådan arbejder jeg",
-	"work_values_label": "Det, jeg går op i",
-	"work_values_1": "Ting, der gør én ting godt",
-	"work_values_2": "Kode, den næste kan læse",
-	"work_values_3": "Hurtigt som standard",
-	"work_method_label": "Sådan arbejder jeg",
-	"work_process_label": "Proces",
-	"work_arch_label": "Arkitektur",
+	"home_workmethod_values_label": "Det, jeg går op i",
+	"home_workmethod_values_1": "Ting, der gør én ting godt",
+	"home_workmethod_values_2": "Kode, den næste kan læse",
+	"home_workmethod_values_3": "Hurtigt som standard",
+	"home_workmethod_label": "Sådan arbejder jeg",
+	"home_workmethod_process_label": "Proces",
+	"home_workmethod_arch_label": "Arkitektur",
 
 	"hl_label": "Højdepunkter",
 	"hl_1_title": "En IoT platform til hospitalsstuer",
@@ -57,6 +57,6 @@
 	"hl_close": "Luk",
 	"hl_images": "Billeder",
 
-	"outro_text": "Vil du se mere? Kig på projekterne, eller skriv til mig.",
+	"outro_text": "Vil du se mere? Kig på mit arbejde, eller skriv til mig.",
 	"outro_status": "Åben for nye muligheder - Danmark"
 }

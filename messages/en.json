@@ -2,12 +2,12 @@
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 
 	"meta_title": "Jacob Jørgensen - Portfolio | Software Developer",
-	"meta_description": "Portfolio of Jacob Jørgensen, a software developer in Denmark. Projects in Rust and C#, how I work, and how to get in touch.",
+	"meta_description": "Jacob's portfolio. I'm Jacob Jørgensen, a software developer in Denmark working with Rust and C#. See my projects, how I work, and how to reach me.",
 
 	"nav_label": "Main navigation",
 	"nav_home": "Home",
 	"nav_about": "About",
-	"nav_projects": "Projects",
+	"nav_work": "Work",
 	"nav_contact": "Contact",
 	"nav_switch_locale": "Switch language",
 	"nav_menu": "Menu",
@@ -16,9 +16,9 @@
 	"about_meta_title": "About – Jacob Jørgensen",
 	"about_description": "Who I am, how I work and what I care about as a software developer.",
 
-	"projects_title": "Projects",
-	"projects_meta_title": "Projects – Jacob Jørgensen",
-	"projects_description": "A selection of things I have built, mostly in Rust and C#.",
+	"work_title": "Work",
+	"work_meta_title": "Work - Jacob Jørgensen",
+	"work_description": "Where I have worked and what I have built, mostly in Rust and C#.",
 
 	"contact_title": "Contact",
 	"contact_meta_title": "Contact – Jacob Jørgensen",
@@ -26,8 +26,7 @@
 
 	"theme_toggle": "Toggle theme",
 
-	"hero_role": "- Software developer -",
-	"read_more": "Read more",
+	"hero_role": "Software developer - Portfolio",
 
 	"intro_label": "Introduction",
 	"intro_fact_1": "Working mostly in Rust and C#",
@@ -38,13 +37,13 @@
 	"intro_from": "From Denmark",
 
 	"method_label": "How I work",
-	"work_values_label": "What I care about",
-	"work_values_1": "Things that do one thing well",
-	"work_values_2": "Code the next person can read",
-	"work_values_3": "Fast by default",
-	"work_method_label": "How I work",
-	"work_process_label": "Process",
-	"work_arch_label": "Architecture",
+	"home_workmethod_values_label": "What I care about",
+	"home_workmethod_values_1": "Things that do one thing well",
+	"home_workmethod_values_2": "Code the next person can read",
+	"home_workmethod_values_3": "Fast by default",
+	"home_workmethod_label": "How I work",
+	"home_workmethod_process_label": "Process",
+	"home_workmethod_arch_label": "Architecture",
 
 	"hl_label": "Highlights",
 	"hl_1_title": "An IoT platform for hospital rooms",
@@ -57,6 +56,6 @@
 	"hl_close": "Close",
 	"hl_images": "Images",
 
-	"outro_text": "Want to see more? Have a look at the projects, or get in touch.",
+	"outro_text": "Want to see more? Have a look at my work, or get in touch.",
 	"outro_status": "Open to opportunities - Denmark"
 }

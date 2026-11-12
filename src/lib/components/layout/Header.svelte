@@ -18,7 +18,7 @@
 
 	const links = $derived([
 		{ route: '/about', href: resolve(href('/about') as Path), label: m.nav_about() },
-		{ route: '/projects', href: resolve(href('/projects') as Path), label: m.nav_projects() },
+		{ route: '/work', href: resolve(href('/work') as Path), label: m.nav_work() },
 		{ route: '/contact', href: resolve(href('/contact') as Path), label: m.nav_contact() }
 	]);
 

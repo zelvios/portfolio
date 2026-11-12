@@ -19,19 +19,19 @@
 	</h2>
 {/snippet}
 
-<section id="work" class="mt-48">
+<section id="home_workmethod" class="mt-48">
 	<GridFrame cols="sm:grid-cols-[1fr_2fr]">
 		<GridCell>
-			{@render label(m.work_values_label())}
+			{@render label(m.home_workmethod_values_label())}
 			<ul class="my-auto divide-y divide-surface0 text-sm text-text">
-				<li class="py-2.5 first:pt-0">{m.work_values_1()}</li>
-				<li class="py-2.5 first:pt-0">{m.work_values_2()}</li>
-				<li class="py-2.5 last:pb-0">{m.work_values_3()}</li>
+				<li class="py-2.5 first:pt-0">{m.home_workmethod_values_1()}</li>
+				<li class="py-2.5 first:pt-0">{m.home_workmethod_values_2()}</li>
+				<li class="py-2.5 last:pb-0">{m.home_workmethod_values_3()}</li>
 			</ul>
 		</GridCell>
 
 		<GridCell>
-			{@render label(m.work_method_label())}
+			{@render label(m.home_workmethod_label())}
 			<BrowserFrame
 				class="mt-4"
 				url="github.com/zelvios/sensecare"
@@ -44,13 +44,13 @@
 				>
 					<div>
 						<dt class="text-subtext0">
-							{m.work_process_label()}
+							{m.home_workmethod_process_label()}
 						</dt>
 						<dd class="mt-1.5 text-text">Agile - Scrum - Kanban - Issues - Pull requests</dd>
 					</div>
 					<div>
 						<dt class="text-subtext0">
-							{m.work_arch_label()}
+							{m.home_workmethod_arch_label()}
 						</dt>
 						<dd class="mt-1.5 text-text">Layered</dd>
 					</div>
@@ -66,8 +66,8 @@
 		<GridCell class="items-center text-center sm:col-span-2">
 			<p class="max-w-md font-bold tracking-tight text-text">{m.outro_text()}</p>
 			<div class="mt-8 flex flex-wrap justify-center gap-3">
-				<ButtonLink href={resolve(href('/projects') as Path)}>
-					{m.nav_projects()}
+				<ButtonLink href={resolve(href('/work') as Path)}>
+					{m.nav_work()}
 					<ArrowRight class="size-3.5" aria-hidden="true" />
 				</ButtonLink>
 				<ButtonLink href={resolve(href('/contact') as Path)}>
