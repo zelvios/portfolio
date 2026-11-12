@@ -118,6 +118,7 @@
 					const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 					let start = 0;
 					let wasActive = false;
+					let last = 0;
 					fig.addEventListener('click', (e) => {
 						const btn = /** @type {Element} */ (e.target).closest('[data-goto]');
 						if (!btn) return;
@@ -129,6 +130,11 @@
 						if (active && !wasActive) start = now;
 						if (!active && wasActive) shots.forEach((s) => s.removeAttribute('data-current'));
 						wasActive = active;
+
+						// freeze the clock while an image is open in the lightbox
+						if (fig.querySelector('[data-lightbox]:popover-open')) start += now - last;
+						last = now;
+
 						if (active) {
 							const p = reduce || n === 1 ? 1 : ((now - start) % (n * per)) / (n * per);
 							const cur = reduce ? 0 : Math.min(Math.floor(p * n), n - 1);
@@ -139,6 +145,33 @@
 					};
 					requestAnimationFrame(tick);
 				});
+
+				// lightbox: click the image to toggle zoom and reset when it closes
+				document.addEventListener('click', (e) => {
+					const btn = /** @type {Element} */ (e.target).closest('[data-zoom]');
+					if (!btn) return;
+					const box = btn.closest('[data-lightbox]');
+					const img = btn.querySelector('img');
+					if (!box || !img) return;
+
+					const before = img.getBoundingClientRect();
+					const fx = (e.clientX - before.left) / before.width;
+					const fy = (e.clientY - before.top) / before.height;
+
+					if (box.toggleAttribute('data-zoomed')) {
+						const frame = box.getBoundingClientRect();
+						const after = img.getBoundingClientRect();
+						box.scrollLeft = fx * after.width - (e.clientX - frame.left);
+						box.scrollTop = fy * after.height - (e.clientY - frame.top);
+					}
+				});
+				document.querySelectorAll('[data-lightbox]').forEach((box) =>
+					box.addEventListener('toggle', (e) => {
+						if (/** @type {ToggleEvent} */ (e).newState === 'closed') {
+							box.removeAttribute('data-zoomed');
+						}
+					})
+				);
 
 				// close an open lightbox when the page scrolls
 				addEventListener(

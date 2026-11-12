@@ -111,20 +111,19 @@
 										{id}
 										popover
 										data-lightbox
-										class="m-auto max-h-[90dvh] max-w-[90vw] rounded-lg border border-surface0 bg-crust p-2 backdrop:bg-crust/80 backdrop:backdrop-blur-sm"
+										class="group/lb m-auto max-h-[90dvh] max-w-[90vw] overflow-auto rounded-lg border border-surface0 bg-crust p-2 backdrop:bg-crust/80 backdrop:backdrop-blur-sm"
 									>
 										<button
 											type="button"
-											popovertarget={id}
-											popovertargetaction="hide"
-											aria-label={m.hl_close()}
-											class="block cursor-zoom-out"
+											data-zoom
+											aria-label={m.hl_zoom_toggle()}
+											class="block cursor-zoom-in group-data-zoomed/lb:cursor-zoom-out"
 										>
 											<Shot
 												src={image.src}
 												sizes="90vw"
 												alt="{item.title} {k + 1}"
-												class="max-h-[calc(90dvh-1rem)]"
+												class="max-h-[calc(90dvh-1rem)] group-data-zoomed/lb:h-auto group-data-zoomed/lb:max-h-none group-data-zoomed/lb:w-[160vw] group-data-zoomed/lb:max-w-none"
 											/>
 										</button>
 									</div>
@@ -138,7 +137,10 @@
 					<!-- under the image: scroll hint and progress bars -->
 					<div class="flex items-center justify-between gap-4">
 						<p class="flex items-center gap-1.5 text-xs text-subtext0">
-							<ChevronDown class="size-3.5 motion-safe:animate-bounce" aria-hidden="true" />
+							<ChevronDown
+								class="size-3.5 text-accent motion-safe:animate-bounce"
+								aria-hidden="true"
+							/>
 							{m.hl_scroll_hint()}
 						</p>
 
