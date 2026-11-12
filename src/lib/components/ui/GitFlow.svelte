@@ -22,9 +22,9 @@
 	<g fill="none" stroke-width="2" stroke-linecap="round">
 		<path d="M20 40H380" class="stroke-surface1" />
 		<!-- feature branch off main -->
-		<path d="M70 40c15 0 15 45 30 45H250" class="flow stroke-accent" />
+		<path d="M70 40c15 0 15 45 30 45H250" class="flow stroke-blue" />
 		<!-- rebase: branch commits replayed onto main -->
-		<path d="M250 85c15 0 15-45 30-45" class="flow stroke-accent" style="stroke-dasharray: 3 4" />
+		<path d="M250 85c15 0 15-45 30-45" class="flow stroke-blue" style="stroke-dasharray: 3 4" />
 	</g>
 
 	<!-- commits on main -->
@@ -33,13 +33,13 @@
 		<circle cx="70" cy="40" r="5" />
 	</g>
 	<!-- commits on the branch -->
-	<g class="fill-base stroke-accent" stroke-width="2">
+	<g class="fill-base stroke-blue" stroke-width="2">
 		<circle cx="130" cy="85" r="5" />
 		<circle cx="180" cy="85" r="5" />
 		<circle cx="230" cy="85" r="5" />
 	</g>
 	<!-- the same commits after rebase, now on main -->
-	<g class="fill-accent stroke-accent" stroke-width="2">
+	<g class="fill-blue stroke-blue" stroke-width="2">
 		<circle cx="300" cy="40" r="5" />
 		<circle cx="320" cy="40" r="5" />
 		<circle cx="340" cy="40" r="5" />
@@ -76,7 +76,7 @@
 	<!-- labels -->
 	<g font-size="10" font-weight="700">
 		<text x="20" y="28" class="fill-subtext0">main</text>
-		<text x="105" y="74" class="fill-accent">feature/*</text>
+		<text x="105" y="74" class="fill-blue">feature/*</text>
 		<text x="282" y="66" class="fill-subtext0" font-weight="500">rebase</text>
 		<text x="372" y="24" text-anchor="middle" class="fill-green">deploy</text>
 	</g>
