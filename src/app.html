@@ -22,9 +22,14 @@
 			type="font/woff2"
 			crossorigin
 		/>
+		<script type="speculationrules">
+			{
+				"prefetch": [{ "where": { "href_matches": "/*" }, "eagerness": "moderate" }]
+			}
+		</script>
 		%sveltekit.head%
 	</head>
-	<body data-sveltekit-preload-data="hover">
+	<body>
 		<div style="display: contents">%sveltekit.body%</div>
 		<script>
 			(() => {
