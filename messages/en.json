@@ -57,5 +57,11 @@
 	"hl_images": "Images",
 
 	"outro_text": "Want to see more? Have a look at my work, or get in touch.",
-	"outro_status": "Open to opportunities - Denmark"
+	"outro_status": "Open to opportunities - Denmark",
+
+	"error_404_title": "Page not found",
+	"error_404_text": "The page you were looking for doesn't exist, or it has moved.",
+	"error_generic_title": "Something went wrong",
+	"error_generic_text": "An unexpected error occurred. Try again in a moment.",
+	"error_back": "Back to the front page"
 }

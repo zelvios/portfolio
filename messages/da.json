@@ -58,5 +58,11 @@
 	"hl_images": "Billeder",
 
 	"outro_text": "Vil du se mere? Kig på mit arbejde, eller skriv til mig.",
-	"outro_status": "Åben for nye muligheder - Danmark"
+	"outro_status": "Åben for nye muligheder - Danmark",
+
+	"error_404_title": "Siden blev ikke fundet",
+	"error_404_text": "Siden, du ledte efter, findes ikke, eller den er flyttet.",
+	"error_generic_title": "Noget gik galt",
+	"error_generic_text": "Der opstod en uventet fejl. Prøv igen om lidt.",
+	"error_back": "Tilbage til forsiden"
 }

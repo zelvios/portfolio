@@ -17,7 +17,10 @@ export default defineConfig({
 			},
 			adapter: adapter(),
 			inlineStyleThreshold: 32 * 1024,
-			paths: { relative: false }
+			paths: { relative: false },
+			prerender: {
+				entries: ['*', '/404', '/da/404']
+			}
 		}),
 
 		paraglideVitePlugin({
