@@ -19,14 +19,14 @@
 	</h2>
 {/snippet}
 
-<section id="home_workmethod" class="mt-48">
+<section id="home-overview" class="mt-48">
 	<GridFrame cols="sm:grid-cols-[1fr_2fr]">
 		<GridCell>
-			{@render label(m.home_workmethod_values_label())}
+			{@render label(m.home_values_label())}
 			<ul class="my-auto divide-y divide-surface0 text-sm text-text">
-				<li class="py-2.5 first:pt-0">{m.home_workmethod_values_1()}</li>
-				<li class="py-2.5 first:pt-0">{m.home_workmethod_values_2()}</li>
-				<li class="py-2.5 last:pb-0">{m.home_workmethod_values_3()}</li>
+				<li class="py-2.5 first:pt-0">{m.home_values_1()}</li>
+				<li class="py-2.5 first:pt-0">{m.home_values_2()}</li>
+				<li class="py-2.5 last:pb-0">{m.home_values_3()}</li>
 			</ul>
 		</GridCell>
 

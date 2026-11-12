@@ -13,7 +13,7 @@
 	"nav_menu": "Menu",
 
 	"about_title": "About",
-	"about_meta_title": "About – Jacob Jørgensen",
+	"about_meta_title": "About - Jacob Jørgensen",
 	"about_description": "Who I am, how I work and what I care about as a software developer.",
 
 	"work_title": "Work",
@@ -21,7 +21,7 @@
 	"work_description": "Where I have worked and what I have built, mostly in Rust and C#.",
 
 	"contact_title": "Contact",
-	"contact_meta_title": "Contact – Jacob Jørgensen",
+	"contact_meta_title": "Contact - Jacob Jørgensen",
 	"contact_description": "Get in touch about work, collaboration or just to say hi.",
 
 	"theme_toggle": "Toggle theme",
@@ -36,11 +36,10 @@
 	"intro_more": "Keep scrolling to get to know me",
 	"intro_from": "From Denmark",
 
-	"method_label": "How I work",
-	"home_workmethod_values_label": "What I care about",
-	"home_workmethod_values_1": "Things that do one thing well",
-	"home_workmethod_values_2": "Code the next person can read",
-	"home_workmethod_values_3": "Fast by default",
+	"home_values_label": "What I care about",
+	"home_values_1": "Things that do one thing well",
+	"home_values_2": "Code the next person can read",
+	"home_values_3": "Fast by default",
 	"home_workmethod_label": "How I work",
 	"home_workmethod_process_label": "Process",
 	"home_workmethod_arch_label": "Architecture",
@@ -51,13 +50,12 @@
 	"hl_2_title": "Built to ship almost no JavaScript",
 	"hl_2_text": "SvelteKit with adapter-static prerenders every page to plain HTML, so nothing runs on a server and most pages ship zero client JS. Critical CSS is inlined, the fonts are self-hosted and subset, and Paraglide compiles the Danish and English strings at build time.",
 	"hl_image": "Image {n}",
+	"hl_images": "Images",
 	"hl_scroll_hint": "Keep scrolling to read on",
 	"hl_zoom": "View full size",
 	"hl_close": "Close",
-	"hl_images": "Images",
 
 	"outro_text": "Want to see more? Have a look at my work, or get in touch.",
-	"outro_status": "Open to opportunities - Denmark",
 
 	"error_404_title": "Page not found",
 	"error_404_text": "The page you were looking for doesn't exist, or it has moved.",

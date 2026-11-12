@@ -3,7 +3,7 @@
 	import Hero from '#lib/components/sections/Hero.svelte';
 	import Header from '#lib/components/layout/Header.svelte';
 	import Intro from '#lib/components/sections/Intro.svelte';
-	import WorkMethod from '#lib/components/sections/WorkMethod.svelte';
+	import HomeOverview from '#lib/components/sections/HomeOverview.svelte';
 
 	const jsonLd = $derived(
 		JSON.stringify({
@@ -26,7 +26,7 @@
 					'@type': 'WebSite',
 					'@id': 'https://jacob-j.com/#website',
 					url: 'https://jacob-j.com',
-					name: 'Jacob Jørgensen – Portfolio',
+					name: 'Jacob Jørgensen - Portfolio',
 					alternateName: "Jacob's Portfolio",
 					inLanguage: ['en', 'da'],
 					author: { '@id': 'https://jacob-j.com/#person' }
@@ -45,4 +45,4 @@
 <div data-sticky-sentinel class="mt-16 h-px"></div>
 <Header hero />
 <Intro />
-<WorkMethod />
+<HomeOverview />

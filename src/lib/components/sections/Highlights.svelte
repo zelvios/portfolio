@@ -13,7 +13,7 @@
 			name: 'SenseCare',
 			title: m.hl_1_title(),
 			text: m.hl_1_text(),
-			tag: 'ESP32 · Rust · SvelteKit · PostgreSQL',
+			tag: 'ESP32 - Rust - SvelteKit - PostgreSQL',
 			repo: 'https://github.com/zelvios/sensecare',
 			images: [{ src: sensecare1 }, { src: sensecare2 }, { src: sensecare3 }]
 		},
@@ -21,7 +21,7 @@
 			name: 'jacob-j.com',
 			title: m.hl_2_title(),
 			text: m.hl_2_text(),
-			tag: 'SvelteKit · adapter-static · Tailwind · Paraglide',
+			tag: 'SvelteKit - adapter-static - Tailwind - Paraglide',
 			repo: 'https://github.com/zelvios/portfolio',
 			images: [{ src: portfolio1 }, { src: portfolio2, fit: 'contain' as const }]
 		}
