@@ -50,7 +50,7 @@
 				};
 				addEventListener('scroll', update, { passive: true });
 				addEventListener('resize', update);
-				update();
+				requestAnimationFrame(update);
 
 				// close any open popover when a link inside it is clicked
 				document.addEventListener('click', (e) => {
@@ -107,7 +107,7 @@
 					};
 					addEventListener('scroll', update, { passive: true });
 					addEventListener('resize', update);
-					update();
+					requestAnimationFrame(update);
 				});
 
 				// timed image carousel in highlight figures
