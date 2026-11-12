@@ -29,12 +29,10 @@
 	"hero_role": "Softwareudvikler - Portfolio",
 
 	"intro_label": "Introduktion",
-	"intro_fact_1": "Arbejder primært i Rust og C#",
-	"intro_fact_2": "Datatekniker med speciale i programmering",
-	"intro_fact_3": "Født i 2002",
-	"intro_fact_4": "Taler dansk og engelsk",
+	"intro_text": "Jeg er datatekniker med speciale i programmering, født i 2002, og arbejder primært i Rust og C#. Jeg taler dansk og engelsk.",
 	"intro_more": "Scroll videre for at lære mig at kende",
 	"intro_from": "Fra Danmark",
+	"intro_github": "Find mig på GitHub",
 
 	"home_values_label": "Det, jeg går op i",
 	"home_values_1": "Ting, der gør én ting godt",
