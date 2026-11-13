@@ -1,8 +1,8 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 
-	"meta_title": "Jacob Jørgensen - Portfolio | Software Developer",
-	"meta_description": "Jacob's portfolio. I'm Jacob Jørgensen, a software developer in Denmark working with Rust and C#. See my projects, how I work, and how to reach me.",
+	"meta_title": "Jacob Jørgensen - Personal Portfolio | Software Developer",
+	"meta_description": "Jacob's personal portfolio. I'm Jacob Jørgensen, a software developer from Denmark. Explore my projects, technical skills and experience.",
 
 	"nav_label": "Main navigation",
 	"nav_home": "Home",
