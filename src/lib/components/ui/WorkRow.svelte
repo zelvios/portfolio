@@ -9,10 +9,11 @@
 		text: string;
 		tag: string;
 		date: string;
+		dateEnd?: string;
 		image?: Picture;
 	}
 
-	let { href, name, text, tag, date, image }: Props = $props();
+	let { href, name, text, tag, date, dateEnd, image }: Props = $props();
 </script>
 
 <a
@@ -20,7 +21,12 @@
 	data-spot
 	class="group relative grid gap-x-6 gap-y-1 px-3 py-5 transition-colors hover:bg-base sm:grid-cols-[7rem_minmax(0,1fr)_14rem_1rem] sm:items-baseline"
 >
-	<time class="order-3 text-xs text-subtext0 sm:order-none">{date}</time>
+	<span class="order-3 flex flex-col text-xs leading-relaxed text-subtext0 sm:order-none">
+		<time>{date}{dateEnd ? ' -' : ''}</time>
+		{#if dateEnd}
+			<time>{dateEnd}</time>
+		{/if}
+	</span>
 
 	<span class="min-w-0">
 		<span class="block text-lg font-bold text-accent">{name}</span>

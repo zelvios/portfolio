@@ -48,6 +48,7 @@
 							text={item.summary()}
 							tag={item.tag}
 							date={item.date}
+							dateEnd={item.dateEnd}
 							image={item.image}
 						/>
 					</li>

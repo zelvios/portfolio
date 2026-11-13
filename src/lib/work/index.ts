@@ -19,9 +19,9 @@ export interface WorkEntry {
 	summary: () => string;
 	tag: string;
 	date: string;
+	dateEnd?: string;
 	image?: Picture;
 	repo?: string;
-	span?: string;
 }
 
 export const work: WorkEntry[] = [
@@ -31,8 +31,8 @@ export const work: WorkEntry[] = [
 		name: 'PakkecenterNORD',
 		summary: m.work_pcn_summary,
 		tag: 'C# - Razor - Blazor - SQL Server',
-		date: '2025 - 2026',
-		span: 'sm:col-span-3'
+		date: 'Nov 2025',
+		dateEnd: 'Jan 2027'
 	},
 	{
 		slug: 'sensecare',
@@ -42,8 +42,7 @@ export const work: WorkEntry[] = [
 		tag: 'ESP32 - Rust - SvelteKit - PostgreSQL',
 		date: '2026',
 		image: image('sensecare-2'),
-		repo: 'https://github.com/zelvios/sensecare',
-		span: 'sm:col-span-2'
+		repo: 'https://github.com/zelvios/sensecare'
 	},
 	{
 		slug: 'portfolio',

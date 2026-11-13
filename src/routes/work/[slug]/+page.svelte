@@ -53,9 +53,7 @@
 </header>
 
 <Band class="mt-10">
-	<article
-		class="max-w-[75ch] text-sm leading-relaxed text-subtext1 [&_a]:text-accent [&_a]:hover:underline [&_h2]:mt-10 [&_h2]:text-lg [&_h2]:font-bold [&_h2]:text-text [&_h2]:first:mt-0 [&_li]:mt-1 [&_p]:mt-4 [&_ul]:mt-4 [&_ul]:list-disc [&_ul]:pl-5"
-	>
+	<article class="article">
 		{#if Content}
 			<Content />
 		{/if}
