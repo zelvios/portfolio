@@ -49,7 +49,7 @@ export const work: WorkEntry[] = [
 		kind: 'project',
 		name: 'jacob-j.com',
 		summary: m.hl_2_title,
-		tag: 'SvelteKit - Tailwind - Paraglide',
+		tag: 'SvelteKit - TypeScript - Tailwind CSS',
 		date: '2026',
 		image: image('portfolio-1'),
 		repo: 'https://github.com/zelvios/portfolio'
