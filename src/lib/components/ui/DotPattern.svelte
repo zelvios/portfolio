@@ -1,8 +1,7 @@
 <script lang="ts">
 	interface Star {
-		/** column and row on the dot grid */
-		col: number;
-		row: number;
+		x: number;
+		y: number;
 		delay?: number;
 		duration?: number;
 	}
@@ -11,6 +10,8 @@
 		size?: number;
 		radius?: number;
 		stars?: Star[];
+		dotClass?: string;
+		glow?: number;
 		class?: string;
 	}
 
@@ -18,15 +19,20 @@
 		size = 20,
 		radius = 1.5,
 		stars = [
-			{ col: 4, row: 3, delay: 0, duration: 6 },
-			{ col: 17, row: 2, delay: 1.3, duration: 7.5 },
-			{ col: 29, row: 6, delay: 2.9, duration: 5.5 },
-			{ col: 9, row: 11, delay: 4.1, duration: 8 },
-			{ col: 23, row: 13, delay: 0.7, duration: 6.5 },
-			{ col: 35, row: 10, delay: 3.4, duration: 7 },
-			{ col: 14, row: 18, delay: 5.2, duration: 6 },
-			{ col: 31, row: 20, delay: 2.2, duration: 8.5 }
+			{ x: 12, y: 18, delay: 0, duration: 6 },
+			{ x: 38, y: 10, delay: 1.3, duration: 7.5 },
+			{ x: 66, y: 22, delay: 2.9, duration: 5.5 },
+			{ x: 88, y: 14, delay: 4.1, duration: 8 },
+			{ x: 22, y: 48, delay: 0.7, duration: 6.5 },
+			{ x: 52, y: 40, delay: 3.4, duration: 7 },
+			{ x: 78, y: 55, delay: 5.2, duration: 6 },
+			{ x: 8, y: 76, delay: 2.2, duration: 8.5 },
+			{ x: 34, y: 82, delay: 4.6, duration: 7 },
+			{ x: 60, y: 70, delay: 1.8, duration: 6.5 },
+			{ x: 92, y: 86, delay: 3.9, duration: 7.5 }
 		],
+		dotClass = 'text-overlay0/60',
+		glow = 8,
 		class: className = ''
 	}: Props = $props();
 
@@ -37,17 +43,18 @@
 	);
 
 	const starStyle = (s: Star) =>
-		`left: ${s.col * size}px; top: ${s.row * size}px;
-	 width: ${radius * 2}px; height: ${radius * 2}px;
-	 --twinkle-delay: ${s.delay ?? 0}s; --twinkle-duration: ${s.duration ?? 6}s;`;
+		`left: round(nearest, ${s.x}%, ${size}px); top: round(nearest, ${s.y}%, ${size}px);
+		 width: ${radius * 2}px; height: ${radius * 2}px;
+		 box-shadow: 0 0 ${glow}px ${glow / 4}px var(--color-accent);
+		 --twinkle-delay: ${s.delay ?? 0}s; --twinkle-duration: ${s.duration ?? 6}s;`;
 </script>
 
 <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10 {className}">
-	<div class="absolute inset-0 text-overlay0/60" style={dots}></div>
+	<div class="absolute inset-0 {dotClass}" style={dots}></div>
 
 	{#each stars as star, i (i)}
 		<span
-			class="absolute -translate-1/2 animate-twinkle rounded-full bg-accent shadow-[0_0_8px_2px_var(--color-accent)] motion-reduce:hidden"
+			class="absolute -translate-1/2 animate-twinkle rounded-full bg-accent motion-reduce:hidden"
 			style={starStyle(star)}
 		></span>
 	{/each}
