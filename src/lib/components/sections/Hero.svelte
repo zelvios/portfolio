@@ -8,10 +8,12 @@
 		<DotPattern class="mask-[radial-gradient(460px_circle_at_50%_55%,black,transparent)]" />
 	</div>
 
-	<h1
-		class="mb-[-0.15em] bg-linear-to-br from-text via-text to-accent bg-clip-text pb-[0.15em] text-5xl leading-[0.95] font-extrabold tracking-tighter text-transparent sm:text-7xl md:text-8xl"
-	>
-		Jacob Jørgensen
+	<h1>
+		<span
+			class="mb-[-0.15em] block bg-linear-to-br from-text via-text to-accent bg-clip-text pb-[0.15em] text-5xl leading-[0.95] font-extrabold tracking-tighter text-transparent sm:text-7xl md:text-8xl"
+		>
+			Jacob Jørgensen
+		</span>
+		<span class="mt-6 block text-lg font-medium text-subtext0 sm:text-xl">{m.hero_role()}</span>
 	</h1>
-	<p class="mt-6 text-lg text-subtext0 sm:text-xl">{m.hero_role()}</p>
 </section>

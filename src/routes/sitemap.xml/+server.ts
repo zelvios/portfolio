@@ -1,10 +1,11 @@
 import { locales, localizeHref } from '#lib/paraglide/runtime.js';
+import { work } from '#lib/work/index.js';
 
 export const prerender = true;
 
 const site = 'https://jacob-j.com';
 
-const pages = ['/', '/about', '/work', '/contact'];
+const pages = ['/', '/about', '/work', '/contact', ...work.map((entry) => `/work/${entry.slug}`)];
 
 export function GET() {
 	const urls = pages

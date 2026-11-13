@@ -4,6 +4,7 @@
 	import Header from '#lib/components/layout/Header.svelte';
 	import Intro from '#lib/components/sections/Intro.svelte';
 	import HomeOverview from '#lib/components/sections/HomeOverview.svelte';
+	import Seo from '#lib/components/ui/Seo.svelte';
 
 	const jsonLd = $derived(
 		JSON.stringify({
@@ -13,7 +14,7 @@
 					'@type': 'Person',
 					'@id': 'https://jacob-j.com/#person',
 					name: 'Jacob Jørgensen',
-					alternateName: ['Jacob', 'zelvios'],
+					alternateName: ['Jacob', 'Jacob Jorgensen', 'zelvios'],
 					url: 'https://jacob-j.com',
 					image: 'https://jacob-j.com/og.png',
 					jobTitle: 'Software Developer',
@@ -26,8 +27,12 @@
 					'@type': 'WebSite',
 					'@id': 'https://jacob-j.com/#website',
 					url: 'https://jacob-j.com',
-					name: 'Jacob Jørgensen - Portfolio',
-					alternateName: "Jacob's Portfolio",
+					name: 'Jacob Jørgensen',
+					alternateName: [
+						"Jacob's Portfolio",
+						'Jacob Jørgensen Portfolio',
+						'Jacob Jorgensen Portfolio'
+					],
 					inLanguage: ['en', 'da'],
 					author: { '@id': 'https://jacob-j.com/#person' }
 				}
@@ -36,6 +41,7 @@
 	);
 </script>
 
+<Seo title={m.meta_title()} description={m.meta_description()} />
 <svelte:head>
 	<!-- eslint-disable-next-line svelte/no-at-html-tags -- static JSON-LD built above, no user input -->
 	{@html `<script type="application/ld+json">${jsonLd}</` + `script>`}

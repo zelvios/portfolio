@@ -1,8 +1,8 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 
-	"meta_title": "Jacob Jørgensen - Portfolio | Software Developer",
-	"meta_description": "Jacob's portfolio. I'm Jacob Jørgensen, a software developer in Denmark working with Rust and C#. See my projects, how I work, and how to reach me.",
+	"meta_title": "Jacob Jørgensen - Personal Portfolio | Software Developer",
+	"meta_description": "Jacob's personal portfolio. I'm Jacob Jørgensen, a software developer from Denmark. Explore my projects, technical skills and experience.",
 
 	"nav_label": "Main navigation",
 	"nav_home": "Home",
@@ -19,6 +19,10 @@
 	"work_title": "Work",
 	"work_meta_title": "Work - Jacob Jørgensen",
 	"work_description": "Where I have worked and what I have built, mostly in Rust and C#.",
+	"work_projects_label": "Projects",
+	"work_experience_label": "Experience",
+	"work_back": "All work",
+	"work_pcn_summary": "Apprenticeship as a Datatekniker specialising in programming",
 
 	"contact_title": "Contact",
 	"contact_meta_title": "Contact - Jacob Jørgensen",
@@ -54,6 +58,12 @@
 	"hl_zoom_toggle": "Zoom in or out",
 
 	"outro_text": "Want to see more? Have a look at my work, or get in touch.",
+
+	"callout_note": "Note",
+	"callout_tip": "Tip",
+	"callout_important": "Important",
+	"callout_warning": "Warning",
+	"callout_caution": "Caution",
 
 	"error_404_title": "Page not found",
 	"error_404_text": "The page you were looking for doesn't exist, or it has moved.",

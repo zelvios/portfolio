@@ -32,7 +32,9 @@
 		<li>
 			<a
 				href={link.href}
-				aria-current={page.route.id === link.route ? 'page' : undefined}
+				aria-current={page.route.id === link.route || page.route.id?.startsWith(link.route + '/')
+					? 'page'
+					: undefined}
 				class="transition-colors hover:text-accent aria-[current=page]:font-bold aria-[current=page]:text-accent {itemClass}"
 			>
 				{link.label}

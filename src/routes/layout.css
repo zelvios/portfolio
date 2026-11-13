@@ -154,3 +154,107 @@
 		@apply bg-accent text-base;
 	}
 }
+
+/* (src/lib/work/content/*.svelte) */
+@layer components {
+	.article {
+		@apply max-w-[75ch] text-sm leading-relaxed text-subtext1;
+
+		& > :first-child {
+			@apply mt-0;
+		}
+
+		& h2 {
+			@apply mt-12 text-xl font-bold tracking-tight text-text;
+		}
+
+		& h3 {
+			@apply mt-8 font-bold text-base text-text;
+		}
+
+		& p {
+			@apply mt-4;
+		}
+
+		& a {
+			@apply text-accent underline-offset-4 hover:underline;
+		}
+
+		& strong {
+			@apply font-bold text-accent;
+		}
+
+		& ul,
+		& ol {
+			@apply mt-4 space-y-1.5 pl-5;
+		}
+
+		& ul {
+			@apply list-disc marker:text-accent;
+		}
+
+		& ol {
+			@apply list-decimal marker:text-subtext0;
+		}
+
+		/* pull quote: <blockquote>One line that should stand out.</blockquote>
+		   note: 	   <Callout type="note">Text</Callout> */
+
+		& blockquote {
+			@apply mt-6 border-l-2 border-accent pl-4 text-base text-text;
+		}
+
+		/* inline code: <code>dotnet ef migrations add</code>
+		   code block:
+		   <pre><code>{`public int Add(int a, int b)
+		   {
+		       return a + b;
+		   }`}</code></pre> */
+		& code {
+			@apply rounded bg-surface0 px-1.5 py-0.5 text-[0.85em] text-text;
+		}
+
+		& pre {
+			@apply mt-6 overflow-x-auto rounded-lg border border-surface0 bg-crust p-4 text-xs leading-relaxed;
+		}
+
+		& pre code {
+			@apply bg-transparent p-0;
+		}
+
+		/* fact box:
+		   <dl>
+		       <dt>Period</dt>
+		       <dd>Nov 2025 - Jan 2027</dd>
+		       <dt>Stack</dt>
+		       <dd>C#, Razor, Blazor</dd>
+		   </dl> */
+		& dl {
+			@apply mt-6 grid grid-cols-[auto_minmax(0,1fr)] gap-x-6 gap-y-2 rounded-lg border border-surface0 bg-base p-4 text-xs;
+		}
+
+		& dt {
+			@apply text-subtext0;
+		}
+
+		& dd {
+			@apply text-text;
+		}
+
+		& figure {
+			@apply mt-8;
+		}
+
+		& img {
+			@apply rounded-lg border border-surface0;
+		}
+
+		& figcaption {
+			@apply mt-2 text-xs text-subtext0;
+		}
+
+		& hr {
+			@apply mt-10 border-surface0;
+		}
+	}
+}

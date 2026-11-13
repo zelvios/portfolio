@@ -15,8 +15,6 @@
 </script>
 
 <svelte:head>
-	<title>{m.meta_title()}</title>
-	<meta content={m.meta_description()} name="description" />
 	<meta content="Jacob Jørgensen" name="author" />
 	<link href={url} rel="canonical" />
 
@@ -25,8 +23,6 @@
 
 	<meta content="website" property="og:type" />
 	<meta content="Jacob Jørgensen" property="og:site_name" />
-	<meta content={m.meta_title()} property="og:title" />
-	<meta content={m.meta_description()} property="og:description" />
 	<meta content={url} property="og:url" />
 	<meta content="{site}/og.png" property="og:image" />
 	<meta content="1200" property="og:image:width" />
@@ -45,7 +41,7 @@
 	{#if page.route.id !== '/'}
 		<Header />
 	{/if}
-	<main class="mx-auto w-full max-w-4xl flex-1 px-6 py-16 sm:px-8">
+	<main class="mx-auto flex w-full max-w-4xl flex-1 flex-col px-6 py-16 sm:px-8">
 		{@render children()}
 	</main>
 </div>
