@@ -7,6 +7,7 @@
 	import Section from '#lib/components/ui/Section.svelte';
 	import Band from '#lib/components/ui/Band.svelte';
 	import WorkRow from '#lib/components/ui/WorkRow.svelte';
+	import Seo from '#lib/components/ui/Seo.svelte';
 
 	const groups = $derived([
 		{
@@ -22,10 +23,7 @@
 	]);
 </script>
 
-<svelte:head>
-	<title>{m.work_meta_title()}</title>
-	<meta name="description" content={m.work_description()} />
-</svelte:head>
+<Seo title={m.work_meta_title()} description={m.work_description()} />
 
 <Section id="work-intro" compact centered class="z-10">
 	<div class="py-18">

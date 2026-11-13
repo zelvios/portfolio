@@ -15,8 +15,6 @@
 </script>
 
 <svelte:head>
-	<title>{m.meta_title()}</title>
-	<meta content={m.meta_description()} name="description" />
 	<meta content="Jacob Jørgensen" name="author" />
 	<link href={url} rel="canonical" />
 
@@ -25,8 +23,6 @@
 
 	<meta content="website" property="og:type" />
 	<meta content="Jacob Jørgensen" property="og:site_name" />
-	<meta content={m.meta_title()} property="og:title" />
-	<meta content={m.meta_description()} property="og:description" />
 	<meta content={url} property="og:url" />
 	<meta content="{site}/og.png" property="og:image" />
 	<meta content="1200" property="og:image:width" />

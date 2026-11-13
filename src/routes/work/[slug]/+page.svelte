@@ -9,6 +9,7 @@
 	import { work } from '#lib/work/index.js';
 	import ButtonLink from '#lib/components/ui/ButtonLink.svelte';
 	import Band from '#lib/components/ui/Band.svelte';
+	import Seo from '#lib/components/ui/Seo.svelte';
 
 	let { data } = $props();
 
@@ -24,10 +25,7 @@
 	);
 </script>
 
-<svelte:head>
-	<title>{entry.name} - Jacob Jørgensen</title>
-	<meta name="description" content={entry.summary()} />
-</svelte:head>
+<Seo title="{entry.name} - Jacob Jørgensen" description={entry.summary()} />
 
 <a
 	href={resolve(href('/work') as Path)}
