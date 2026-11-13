@@ -12,7 +12,7 @@
 	<dt>Periode</dt>
 	<dd>3. november 2025 til 24. januar 2027</dd>
 	<dt>Uddannelse</dt>
-	<dd>Data- og kommunikationsuddannelsen, Datatekniker (programmering)</dd>
+	<dd>Data- og kommunikationsuddannelsen, Datatekniker med speciale i programmering</dd>
 	<dt>Skole</dt>
 	<dd>TECHCOLLEGE</dd>
 	<dt>Stack</dt>

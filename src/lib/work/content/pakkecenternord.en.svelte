@@ -11,8 +11,8 @@
 <dl>
 	<dt>Period</dt>
 	<dd>3 November 2025 to 24 January 2027</dd>
-	<dt>Programme</dt>
-	<dd>Data- og kommunikationsuddannelsen, Datatekniker (programming)</dd>
+	<dt>Education</dt>
+	<dd>Datatekniker with a specialisation in programming (vocational education)</dd>
 	<dt>School</dt>
 	<dd>TECHCOLLEGE</dd>
 	<dt>Stack</dt>
