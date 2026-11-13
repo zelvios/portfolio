@@ -120,7 +120,7 @@
 	--color-red: var(--vs-red);
 
 	/* Dot twinkle (DotPattern) */
-	--animate-twinkle: twinkle var(--twinkle-duration) ease-in-out var(--twinkle-delay) infinite;
+	--animate-twinkle: twinkle var(--twinkle-duration) ease-in-out var(--twinkle-delay) infinite both;
 
 	@keyframes twinkle {
 		0%,

@@ -46,7 +46,7 @@
 		`left: round(nearest, ${s.x}%, ${size}px); top: round(nearest, ${s.y}%, ${size}px);
 		 width: ${radius * 2}px; height: ${radius * 2}px;
 		 box-shadow: 0 0 ${glow}px ${glow / 4}px var(--color-accent);
-		 --twinkle-delay: ${s.delay ?? 0}s; --twinkle-duration: ${s.duration ?? 6}s;`;
+--twinkle-delay: ${-((s.duration ?? 6) * 0.6 + (s.delay ?? 0))}s; --twinkle-duration: ${s.duration ?? 6}s;`;
 </script>
 
 <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10 {className}">
