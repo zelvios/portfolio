@@ -22,7 +22,7 @@
 	"work_projects_label": "Projekter",
 	"work_experience_label": "Erfaring",
 	"work_back": "Alt arbejde",
-	"work_pcn_summary": "Elevplads som datatekniker med speciale i programmering",
+	"work_pcn_summary": "Elevplads som Datatekniker med speciale inden for programmering",
 
 	"contact_title": "Kontakt",
 	"contact_meta_title": "Kontakt – Jacob Jørgensen",
@@ -58,6 +58,12 @@
 	"hl_zoom_toggle": "Zoom ind eller ud",
 
 	"outro_text": "Vil du se mere? Kig på mit arbejde, eller skriv til mig.",
+
+	"callout_note": "Bemærk",
+	"callout_tip": "Tip",
+	"callout_important": "Vigtigt",
+	"callout_warning": "Advarsel",
+	"callout_caution": "Pas på",
 
 	"error_404_title": "Siden blev ikke fundet",
 	"error_404_text": "Siden, du ledte efter, findes ikke, eller den er flyttet.",

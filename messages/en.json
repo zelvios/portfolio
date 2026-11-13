@@ -22,7 +22,7 @@
 	"work_projects_label": "Projects",
 	"work_experience_label": "Experience",
 	"work_back": "All work",
-	"work_pcn_summary": "Software development apprenticeship, building web applications",
+	"work_pcn_summary": "Apprenticeship as a Datatekniker specialising in programming",
 
 	"contact_title": "Contact",
 	"contact_meta_title": "Contact - Jacob Jørgensen",
@@ -58,6 +58,12 @@
 	"hl_zoom_toggle": "Zoom in or out",
 
 	"outro_text": "Want to see more? Have a look at my work, or get in touch.",
+
+	"callout_note": "Note",
+	"callout_tip": "Tip",
+	"callout_important": "Important",
+	"callout_warning": "Warning",
+	"callout_caution": "Caution",
 
 	"error_404_title": "Page not found",
 	"error_404_text": "The page you were looking for doesn't exist, or it has moved.",
