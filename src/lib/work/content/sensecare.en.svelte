@@ -4,9 +4,9 @@
 
 <h2>Final examination project</h2>
 <p>
-	<strong>SenseCare</strong> was my final examination project (svendeprøve) for the Danish
-	vocational education Datatekniker with a specialisation in programming. It is an IoT platform
-	for monitoring indoor climate and handling service calls in hospital rooms.
+	<strong>SenseCare</strong> was my final examination project (svendeprøve) for the Danish vocational
+	education Datatekniker with a specialisation in programming. It is an IoT platform for monitoring indoor
+	climate and handling service calls in hospital rooms.
 </p>
 
 <dl>
