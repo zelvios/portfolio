@@ -25,7 +25,7 @@
 	);
 </script>
 
-<Seo title="{entry.name} - Jacob Jørgensen" description={entry.summary()} />
+<Seo title="{entry.title?.() ?? entry.name} - Jacob Jørgensen" description={entry.summary()} />
 
 <a
 	href={resolve(href('/work') as Path)}

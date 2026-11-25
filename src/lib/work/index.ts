@@ -16,6 +16,7 @@ export interface WorkEntry {
 	slug: string;
 	kind: 'experience' | 'project';
 	name: string;
+	title?: () => string;
 	summary: () => string;
 	tag: string;
 	date: string;
@@ -48,6 +49,7 @@ export const work: WorkEntry[] = [
 		slug: 'portfolio',
 		kind: 'project',
 		name: 'jacob-j.com',
+		title: m.work_portfolio_title,
 		summary: m.hl_2_title,
 		tag: 'SvelteKit - TypeScript - Tailwind CSS',
 		date: '2026',

@@ -1,22 +1,36 @@
 <script lang="ts">
 	import * as m from '#lib/paraglide/messages.js';
+	import { getLocale, localizeHref } from '#lib/paraglide/runtime.js';
 	import Hero from '#lib/components/sections/Hero.svelte';
 	import Header from '#lib/components/layout/Header.svelte';
 	import Intro from '#lib/components/sections/Intro.svelte';
 	import HomeOverview from '#lib/components/sections/HomeOverview.svelte';
 	import Seo from '#lib/components/ui/Seo.svelte';
 
+	const site = 'https://jacob-j.com';
+
 	const jsonLd = $derived(
 		JSON.stringify({
 			'@context': 'https://schema.org',
 			'@graph': [
 				{
+					'@type': 'ProfilePage',
+					'@id': `${site}${localizeHref('/')}#page`,
+					url: `${site}${localizeHref('/')}`,
+					name: m.meta_title(),
+					inLanguage: getLocale(),
+					isPartOf: { '@id': `${site}/#website` },
+					mainEntity: { '@id': `${site}/#person` }
+				},
+				{
 					'@type': 'Person',
-					'@id': 'https://jacob-j.com/#person',
+					'@id': `${site}/#person`,
 					name: 'Jacob Jørgensen',
-					alternateName: ['Jacob', 'Jacob Jorgensen', 'zelvios'],
-					url: 'https://jacob-j.com',
-					image: 'https://jacob-j.com/og.png',
+					givenName: 'Jacob',
+					familyName: 'Jørgensen',
+					alternateName: ['Jacob Jorgensen', 'Jacob Joergensen', 'zelvios'],
+					url: `${site}/`,
+					image: `${site}/og.png`,
 					jobTitle: 'Software Developer',
 					description: m.meta_description(),
 					address: { '@type': 'PostalAddress', addressCountry: 'DK' },
@@ -25,16 +39,19 @@
 				},
 				{
 					'@type': 'WebSite',
-					'@id': 'https://jacob-j.com/#website',
-					url: 'https://jacob-j.com',
+					'@id': `${site}/#website`,
+					url: `${site}/`,
 					name: 'Jacob Jørgensen',
 					alternateName: [
+						'Jacob Portfolio',
 						"Jacob's Portfolio",
 						'Jacob Jørgensen Portfolio',
-						'Jacob Jorgensen Portfolio'
+						'Jacob Joergensen Portfolio',
+						'Jacob Jorgensen Portfolio',
+						'jacob-j.com'
 					],
 					inLanguage: ['en', 'da'],
-					author: { '@id': 'https://jacob-j.com/#person' }
+					publisher: { '@id': `${site}/#person` }
 				}
 			]
 		})
