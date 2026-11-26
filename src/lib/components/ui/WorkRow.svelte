@@ -19,7 +19,7 @@
 <a
 	{href}
 	data-spot
-	class="group relative grid gap-x-6 gap-y-1 px-3 py-5 transition-colors hover:bg-base sm:grid-cols-[7rem_minmax(0,1fr)_14rem_1rem] sm:items-baseline"
+	class="group relative grid gap-x-6 gap-y-1 px-3 py-5 pr-10 transition-colors hover:bg-base sm:grid-cols-[7rem_minmax(0,1fr)_14rem_1rem] sm:items-baseline sm:pr-3"
 >
 	<span class="order-3 flex flex-col text-xs leading-relaxed text-subtext0 sm:order-none">
 		<time>{date}{dateEnd ? ' -' : ''}</time>
@@ -36,7 +36,7 @@
 	<span class="order-4 text-xs leading-relaxed text-subtext0 sm:order-none">{tag}</span>
 
 	<ArrowRight
-		class="hidden size-4 self-center text-subtext0 transition-all group-hover:translate-x-0.5 group-hover:text-accent sm:block"
+		class="absolute top-1/2 right-3 size-4 -translate-y-1/2 text-subtext0 transition-all group-hover:translate-x-0.5 group-hover:text-accent sm:static sm:translate-y-0 sm:self-center"
 		aria-hidden="true"
 	/>
 
