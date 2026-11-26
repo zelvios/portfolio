@@ -15,7 +15,7 @@
 	"about_title": "Om mig",
 	"about_meta_title": "Om - Jacob Jørgensen",
 	"about_description": "Hvem jeg er, hvordan jeg arbejder, og hvad jeg går op i som softwareudvikler.",
-	"about_bio_1": "Jeg hedder Jacob og er datatekniker med speciale i programmering. Jeg skriver C# og Rust, og jeg har altid været nysgerrig efter, hvordan tingene virker bag facaden, og det er stort set sådan, jeg endte her.",
+	"about_bio_1": "Jeg hedder Jacob Jørgensen og er datatekniker med speciale i programmering. Jeg skriver C# og Rust, og jeg har altid været nysgerrig efter, hvordan tingene virker bag facaden, og det er stort set sådan, jeg endte her.",
 	"about_bio_2_pre": "Jeg har brugt Linux i flere år, blandt andet Arch, og mine dotfiles ligger på",
 	"about_bio_2_link": "GitHub",
 	"about_bio_2_post": ". Jeg kan godt lide at gå i dybden med noget, til jeg forstår det ordentligt, og jeg holder mig opdateret på, hvad der sker inden for software, fra nye versioner til sikkerhedsadvarsler.",
@@ -61,9 +61,11 @@
 	"home_values_1": "Ting, der gør én ting godt",
 	"home_values_2": "Kode, den næste kan læse",
 	"home_values_3": "Hurtigt som standard",
-	"home_workmethod_label": "Sådan arbejder jeg",
+	"home_workmethod_label": "Eksempel på hvordan jeg arbejder",
 	"home_workmethod_process_label": "Proces",
 	"home_workmethod_arch_label": "Arkitektur",
+	"home_workmethod_thoughts_label": "Overvejelser",
+	"home_workmethod_more": "Læs mere",
 
 	"hl_label": "Højdepunkter",
 	"hl_1_title": "En IoT-platform til hospitalsstuer",
@@ -76,7 +78,7 @@
 	"hl_zoom": "Se i fuld størrelse",
 	"hl_zoom_toggle": "Zoom ind eller ud",
 
-	"outro_text": "Vil du se mere? Kig på mit arbejde, eller skriv til mig.",
+	"outro_text": "Vil du vide mere? Læs om mig, eller se hvad jeg har arbejdet med.",
 
 	"callout_note": "Bemærk",
 	"callout_tip": "Tip",
