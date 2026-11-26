@@ -67,7 +67,7 @@
 			</a>
 		</div>
 
-		<CornerFrame class="self-start p-5">
+		<CornerFrame class="self-center p-5">
 			<dl class="grid grid-cols-[auto_minmax(0,1fr)] gap-x-4 gap-y-2 text-xs">
 				<dt class="text-subtext0">{m.about_fact_based()}</dt>
 				<dd class="text-text">{m.about_fact_based_value()}</dd>
