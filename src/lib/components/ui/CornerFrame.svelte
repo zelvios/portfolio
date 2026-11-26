@@ -9,15 +9,12 @@
 
 	let { glow = false, class: className = '', children }: Props = $props();
 
-	const h =
-		'pointer-events-none absolute h-[1.5px] w-12 -translate-y-1/2 bg-linear-to-r from-transparent via-surface1 to-transparent';
-	const v =
-		'pointer-events-none absolute h-12 w-[1.5px] -translate-x-1/2 bg-linear-to-b from-transparent via-surface1 to-transparent';
+	const corner = 'pointer-events-none absolute size-3 border-surface1';
 </script>
 
 <div
 	data-spot={glow || undefined}
-	class="group relative border border-surface0 bg-mantle {className}"
+	class="group relative border border-surface0 bg-base shadow-lg shadow-crust/60 {className}"
 >
 	{#if glow}
 		<span
@@ -26,14 +23,10 @@
 		></span>
 	{/if}
 
-	<span aria-hidden="true" class="{h} top-0 -left-6"></span>
-	<span aria-hidden="true" class="{v} -top-6 left-0"></span>
-	<span aria-hidden="true" class="{h} top-0 -right-6"></span>
-	<span aria-hidden="true" class="{v} -top-6 right-0 translate-x-1/2"></span>
-	<span aria-hidden="true" class="{h} bottom-0 -left-6 translate-y-1/2"></span>
-	<span aria-hidden="true" class="{v} -bottom-6 left-0"></span>
-	<span aria-hidden="true" class="{h} -right-6 bottom-0 translate-y-1/2"></span>
-	<span aria-hidden="true" class="{v} right-0 -bottom-6 translate-x-1/2"></span>
+	<span aria-hidden="true" class="{corner} -top-px -left-px border-t-2 border-l-2"></span>
+	<span aria-hidden="true" class="{corner} -top-px -right-px border-t-2 border-r-2"></span>
+	<span aria-hidden="true" class="{corner} -bottom-px -left-px border-b-2 border-l-2"></span>
+	<span aria-hidden="true" class="{corner} -right-px -bottom-px border-r-2 border-b-2"></span>
 
 	<div class="relative">
 		{@render children()}

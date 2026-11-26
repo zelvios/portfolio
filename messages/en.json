@@ -15,7 +15,7 @@
 	"about_title": "About",
 	"about_meta_title": "About - Jacob Jørgensen",
 	"about_description": "Who I am, how I work and what I care about as a software developer.",
-	"about_bio_1": "I'm Jacob, a Datatekniker specialising in programming. I write C# and Rust, and I've always been curious about how things work under the hood, which is mostly how I ended up here.",
+	"about_bio_1": "I'm Jacob Jørgensen, a Datatekniker specialising in programming. I write C# and Rust, and I've always been curious about how things work under the hood, which is mostly how I ended up here.",
 	"about_bio_2_pre": "I've used Linux for years, including Arch, and my dotfiles are on",
 	"about_bio_2_link": "GitHub",
 	"about_bio_2_post": ". I like digging into something until I understand it properly, and I keep up with what's happening in software, from new releases to security advisories.",
@@ -61,9 +61,11 @@
 	"home_values_1": "Things that do one thing well",
 	"home_values_2": "Code the next person can read",
 	"home_values_3": "Fast by default",
-	"home_workmethod_label": "How I work",
+	"home_workmethod_label": "Example of how I work",
 	"home_workmethod_process_label": "Process",
 	"home_workmethod_arch_label": "Architecture",
+	"home_workmethod_thoughts_label": "Thoughts",
+	"home_workmethod_more": "Read more",
 
 	"hl_label": "Highlights",
 	"hl_1_title": "An IoT platform for hospital rooms",
@@ -76,7 +78,7 @@
 	"hl_zoom": "View full size",
 	"hl_zoom_toggle": "Zoom in or out",
 
-	"outro_text": "Want to see more? Have a look at my work, or get in touch.",
+	"outro_text": "Want to know more? Read about me, or see what I've worked on.",
 
 	"callout_note": "Note",
 	"callout_tip": "Tip",

@@ -2,9 +2,9 @@
 	let { class: className = '' }: { class?: string } = $props();
 
 	const checks = [
-		{ x: 95, label: 'PR checks' },
-		{ x: 175, label: 'CI' },
-		{ x: 255, label: 'E2E' }
+		{ x: 65, label: 'PR checks' },
+		{ x: 140, label: 'CI' },
+		{ x: 215, label: 'E2E' }
 	];
 </script>
 
