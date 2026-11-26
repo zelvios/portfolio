@@ -41,7 +41,7 @@
 	<div class="mt-6 flex flex-wrap items-center justify-between gap-3 text-xs text-subtext0">
 		<span>{entry.tag}</span>
 		<span class="flex items-center gap-4">
-			<time>{entry.date}</time>
+			<time>{entry.dateEnd ? `${entry.date} - ${entry.dateEnd}` : entry.date}</time>
 			{#if entry.repo}
 				<ButtonLink href={entry.repo} size="sm" external>
 					<ExternalLink class="size-3.5" aria-hidden="true" />

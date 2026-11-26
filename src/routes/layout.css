@@ -158,7 +158,7 @@
 /* (src/lib/work/content/*.svelte) */
 @layer components {
 	.article {
-		@apply max-w-[75ch] text-sm leading-relaxed text-subtext1;
+		@apply text-sm leading-relaxed text-subtext1;
 
 		& > :first-child {
 			@apply mt-0;
