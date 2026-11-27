@@ -121,7 +121,12 @@
 										aria-label={m.hl_zoom()}
 										class="h-full w-full cursor-zoom-in"
 									>
-										<Shot src={image.src} fit={image.fit} alt="{item.title} {k + 1}" />
+										<Shot
+											src={image.src}
+											fit={image.fit}
+											sizes="(min-width: 896px) 832px, calc(100vw - 3rem)"
+											alt="{item.title} {k + 1}"
+										/>
 									</button>
 
 									<div
