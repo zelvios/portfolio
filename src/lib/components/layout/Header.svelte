@@ -103,5 +103,13 @@
 			</ul>
 		</MobileMenu>
 	</nav>
-	<ScrollProgress />
+	<div
+		class="pointer-events-none absolute inset-x-0 bottom-0 mx-auto max-w-4xl {hero
+			? ''
+			: 'px-4 sm:px-8'}"
+	>
+		<div class="relative">
+			<ScrollProgress />
+		</div>
+	</div>
 </header>
