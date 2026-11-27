@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="%paraglide.lang%" dir="%paraglide.dir%">
+<html dir="%paraglide.dir%" lang="%paraglide.lang%">
 	<head>
 		<meta charset="utf-8" />
 		<script>
@@ -13,14 +13,16 @@
 							: 'dark';
 			})();
 		</script>
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="text-scale" content="scale" />
+		<meta content="width=device-width, initial-scale=1" name="viewport" />
+		<meta content="scale" name="text-scale" />
+		<meta content="notranslate" name="robots" />
+		<meta content="notranslate" name="google" />
 		<link
-			rel="preload"
-			href="/fonts/JetBrainsMono-Medium.woff2"
 			as="font"
-			type="font/woff2"
 			crossorigin
+			href="/fonts/JetBrainsMono-Medium.woff2"
+			rel="preload"
+			type="font/woff2"
 		/>
 		<script type="speculationrules">
 			{
@@ -48,14 +50,46 @@
 					).observe(sentinel);
 				}
 
-				// scroll progress
+				// scroll progress and scroll-stepped highlights
+				const tracks = [...document.querySelectorAll('[data-reveal]')].map((track) => ({
+					track,
+					stage: track.firstElementChild,
+					slides: [...track.querySelectorAll('[data-slide]')],
+					figures: [...track.querySelectorAll('[data-figure]')]
+				}));
+
+				let queued = false;
 				const update = () => {
-					const max = d.scrollHeight - window.innerHeight;
-					d.style.setProperty('--scroll', String(max > 0 ? d.scrollTop / max : 0));
+					queued = false;
+
+					const max = d.scrollHeight - innerHeight;
+					const top = d.scrollTop;
+					const measured = tracks.map(({ track, stage }) => {
+						const r = track.getBoundingClientRect();
+						return {
+							top: r.top,
+							total: Math.max(r.height - stage.getBoundingClientRect().height, 1)
+						};
+					});
+
+					d.style.setProperty('--scroll', String(max > 0 ? top / max : 0));
+					tracks.forEach(({ track, slides, figures }, i) => {
+						const n = slides.length;
+						const p = Math.min(Math.max(-measured[i].top / measured[i].total, 0), 0.9999);
+						const k = Math.floor(p * n);
+						track.style.setProperty('--p', String(p * n - k));
+						slides.forEach((s, j) => s.toggleAttribute('data-active', j === k));
+						figures.forEach((f, j) => f.toggleAttribute('data-active', j === k));
+					});
 				};
-				addEventListener('scroll', update, { passive: true });
-				addEventListener('resize', update);
-				requestAnimationFrame(update);
+				const schedule = () => {
+					if (queued) return;
+					queued = true;
+					requestAnimationFrame(update);
+				};
+				addEventListener('scroll', schedule, { passive: true });
+				addEventListener('resize', schedule);
+				schedule();
 
 				// close any open popover when a link inside it is clicked
 				document.addEventListener('click', (e) => {
@@ -93,26 +127,6 @@
 							{ duration: 400, easing: 'ease-in-out', pseudoElement: '::view-transition-new(root)' }
 						);
 					});
-				});
-
-				// scroll-stepped highlights
-				document.querySelectorAll('[data-reveal]').forEach((track) => {
-					const slides = [...track.querySelectorAll('[data-slide]')];
-					const figures = [...track.querySelectorAll('[data-figure]')];
-					const n = slides.length;
-					const update = () => {
-						const r = track.getBoundingClientRect();
-						const stage = track.firstElementChild.getBoundingClientRect().height;
-						const total = Math.max(r.height - stage, 1);
-						const p = Math.min(Math.max(-r.top / total, 0), 0.9999);
-						const k = Math.floor(p * n);
-						track.style.setProperty('--p', String(p * n - k));
-						slides.forEach((s, i) => s.toggleAttribute('data-active', i === k));
-						figures.forEach((f, i) => f.toggleAttribute('data-active', i === k));
-					};
-					addEventListener('scroll', update, { passive: true });
-					addEventListener('resize', update);
-					requestAnimationFrame(update);
 				});
 
 				// timed image carousel in highlight figures

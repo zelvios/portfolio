@@ -1,7 +1,8 @@
 <script lang="ts">
 	import type { Path } from '$app/types';
 	import { resolve } from '$app/paths';
-	import { GitBranch, Mail } from '@lucide/svelte';
+	import { ArrowLeft, GitBranch, Mail } from '@lucide/svelte';
+	import ButtonLink from '#lib/components/ui/ButtonLink.svelte';
 	import { href } from '#lib/i18n.js';
 	import * as m from '#lib/paraglide/messages.js';
 	import { work } from '#lib/work/index.js';
@@ -51,6 +52,10 @@
 				</a>
 			{/each}
 		</div>
+		<ButtonLink href={resolve(href('/') as Path)} size="sm" class="mt-4 self-start">
+			<ArrowLeft class="size-3.5" aria-hidden="true" />
+			{m.contact_back_home()}
+		</ButtonLink>
 	</div>
 
 	<!-- right -->

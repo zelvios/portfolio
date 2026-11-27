@@ -46,6 +46,7 @@
 	"contact_title": "Contact",
 	"contact_meta_title": "Contact - Jacob Jørgensen",
 	"contact_description": "Get in touch about work, collaboration or just to say hi.",
+	"contact_back_home": "Back to the front page",
 
 	"theme_toggle": "Toggle theme",
 
@@ -65,7 +66,7 @@
 	"home_workmethod_process_label": "Process",
 	"home_workmethod_arch_label": "Architecture",
 	"home_workmethod_thoughts_label": "Thoughts",
-	"home_workmethod_more": "Read more",
+	"home_workmethod_more": "Read about SenseCare",
 
 	"hl_label": "Highlights",
 	"hl_1_title": "An IoT platform for hospital rooms",

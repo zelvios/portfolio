@@ -2,19 +2,17 @@
 	import type { Path } from '$app/types';
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
-	import { getLocale } from '#lib/paraglide/runtime.js';
 	import { href } from '#lib/i18n.js';
 	import * as m from '#lib/paraglide/messages.js';
 	import Logo from '#lib/components/ui/Logo.svelte';
 	import ScrollProgress from '#lib/components/ui/ScrollProgress.svelte';
 	import MobileMenu from '#lib/components/ui/MobileMenu.svelte';
 	import ThemeToggle from '#lib/components/ui/ThemeToggle.svelte';
+	import LanguageMenu from '#lib/components/ui/LanguageMenu.svelte';
 
 	let { hero = false }: { hero?: boolean } = $props();
 
 	const home = $derived(resolve(href('/') as Path));
-	const otherLocale = $derived(getLocale() === 'da' ? 'en' : 'da');
-	const switchHref = $derived(resolve(href(page.url.pathname, otherLocale) as Path));
 
 	const links = $derived([
 		{ route: '/about', href: resolve(href('/about') as Path), label: m.nav_about() },
@@ -81,16 +79,7 @@
 			class="flex items-center divide-x divide-surface1 justify-self-end overflow-hidden rounded-md border border-surface1 bg-mantle text-xs text-text transition-colors group-data-stuck:text-subtext0 hover:border-accent max-sm:group-data-stuck:hidden"
 		>
 			<li>
-				<a
-					aria-label={m.nav_switch_locale()}
-					class="flex h-7 items-center px-2 font-bold uppercase transition-colors hover:text-accent"
-					data-sveltekit-reload
-					href={switchHref}
-					hreflang={otherLocale}
-					lang={otherLocale}
-				>
-					{otherLocale}
-				</a>
+				<LanguageMenu />
 			</li>
 			<li>
 				<ThemeToggle class="flex h-7 items-center px-2" label={m.theme_toggle()} />
@@ -106,14 +95,7 @@
 			<ul class="flex flex-col">
 				{@render navLinks('block rounded px-3 py-2 hover:bg-surface0')}
 				<li>
-					<a
-						aria-label={m.nav_switch_locale()}
-						class="block rounded px-3 py-2 font-bold uppercase hover:bg-surface0"
-						data-sveltekit-reload
-						href={switchHref}
-						hreflang={otherLocale}
-						lang={otherLocale}>{otherLocale}</a
-					>
+					<LanguageMenu variant="list" />
 				</li>
 				<li>
 					<ThemeToggle class="block rounded px-3 py-2 hover:bg-surface0" label={m.theme_toggle()} />
@@ -121,5 +103,13 @@
 			</ul>
 		</MobileMenu>
 	</nav>
-	<ScrollProgress />
+	<div
+		class="pointer-events-none absolute inset-x-0 bottom-0 mx-auto max-w-4xl {hero
+			? ''
+			: 'px-4 sm:px-8'}"
+	>
+		<div class="relative">
+			<ScrollProgress />
+		</div>
+	</div>
 </header>
