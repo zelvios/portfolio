@@ -63,7 +63,7 @@
 						href={resolve(href(`/work/${entry.slug}`) as Path)}
 						class="mt-2 inline-flex items-center gap-1 text-xs text-accent hover:underline"
 					>
-						{more}
+						{more}<span class="sr-only"> - {entry.title}</span>
 						<ArrowRight class="size-3.5" aria-hidden="true" />
 					</a>
 				{/if}
